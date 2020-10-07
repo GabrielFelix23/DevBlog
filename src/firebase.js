@@ -20,6 +20,10 @@ class Firebase{
         }
         this.app = firebase.database()
     }
+
+    logar(email, senha){
+        return firebase.auth().signInWithEmailAndPassword(email, senha)
+    }
 }
 
 export default new Firebase()

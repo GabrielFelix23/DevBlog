@@ -19,8 +19,8 @@ section#posts .titulo{
 }
 
 section#posts img{
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    max-width: 539px;
 }
 
 section#posts .descricao{

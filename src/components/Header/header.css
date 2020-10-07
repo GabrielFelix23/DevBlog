@@ -8,8 +8,7 @@ header#header{
 
     background: #FD8469;
     color: #fff;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 0 30px
 }
 
 header#header .logo{
