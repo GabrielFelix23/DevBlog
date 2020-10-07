@@ -1,0 +1,28 @@
+section#posts{
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+section#posts article{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+section#posts .titulo{
+    font-size: 20px
+}
+
+section#posts img{
+    width: 500px;
+    height: 500px;
+}
+
+section#posts .descricao{
+    font-size: 18px
+}
