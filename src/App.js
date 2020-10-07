@@ -1,5 +1,6 @@
 import React from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import firebase from './firebase'
 
 import Header from './components/Header'
 import Home from './components/Home'
@@ -10,10 +11,24 @@ import Postagens from './components/Postagens'
 
 import Error from './components/Error'
 import './global.css'
+import './app.css'
 
 class App extends React.Component{
+
+  state = {
+    estaLogado: false
+  }
+
+  componentDidMount(){
+    firebase.Logado().then((resultado) => {
+      this.setState({
+        estaLogado: resultado
+      })
+    })
+  }
+
   render() {
-    return (
+    return this.state.estaLogado !== false ?(
       <BrowserRouter>
       <Header/>
         <Switch>
@@ -26,7 +41,10 @@ class App extends React.Component{
           <Route path="*" component={Error}/>
         </Switch>
       </BrowserRouter>
-    );
+    ):
+    <div id="loading">
+      <h1>Carregando...</h1>
+    </div>
   }
 }
 

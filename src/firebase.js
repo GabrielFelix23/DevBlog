@@ -24,6 +24,13 @@ class Firebase{
     logar(email, senha){
         return firebase.auth().signInWithEmailAndPassword(email, senha)
     }
+
+
+    Logado(){
+        return new Promise((logado) => {
+            firebase.auth().onAuthStateChanged(logado)
+        })
+    }
 }
 
 export default new Firebase()
