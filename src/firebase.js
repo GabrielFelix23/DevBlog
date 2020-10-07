@@ -21,11 +21,12 @@ class Firebase{
         this.app = firebase.database()
     }
 
+    //login
     logar(email, senha){
         return firebase.auth().signInWithEmailAndPassword(email, senha)
     }
 
-
+    //para ver se o user está conectado
     Logado(){
         return new Promise((logado) => {
             firebase.auth().onAuthStateChanged(logado)
