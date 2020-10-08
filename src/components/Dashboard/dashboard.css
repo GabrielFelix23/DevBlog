@@ -16,13 +16,13 @@ section#containerDeslogar .caixas{
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    height: 200px;
-    max-width: 200px;
+    height: 250px;
+    max-width: 250px;
     background: #81F7F3;
     border-radius: 10px;
     font-size: 18px;
     padding: 10px;
-    margin: 10px
+    margin: 15px
 }
 
 section#containerDeslogar .caixas .fotoPerfil{
@@ -72,4 +72,9 @@ section#containerDeslogar .fundoVerde .foto img{
 }
 section#containerDeslogar .fundoVerde p{
     margin-bottom: 45px
+}
+
+section#containerDeslogar .fundoVerde button a{
+    text-decoration: none;
+    color: #000
 }

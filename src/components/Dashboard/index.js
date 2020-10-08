@@ -1,6 +1,6 @@
 import React from 'react'
 import firebase from '../../firebase'
-import {withRouter} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 import './dashboard.css'
 import foto from './fotos.png'
@@ -10,14 +10,28 @@ class Dashboard extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-
+      nome: localStorage.nome,
     }
     this.deslogar = this.deslogar.bind(this)
   }
 
+  async componentDidMount(){
+    if(!firebase.logado()){
+      this.props.history.replace("/login")
+      return null
+    }
+
+    firebase.nomeUser((info)=>{
+      localStorage.nome = info.val().nome
+      this.setState({nome: localStorage.nome })
+    })
+  }
+
+
   deslogar(){
     firebase.deslogar().then(() => {
       this.props.history.push('/')
+      localStorage.removeItem('nome')
     })
   }
 
@@ -28,8 +42,8 @@ class Dashboard extends React.Component{
           <div className="fotoPerfil">
             <img src={fotoPerfil} alt="foto"/>
           </div>
-          <p>Nome: </p>
-          <p>Email: </p>
+          <p>Olá {this.state.nome}</p>
+          <p>Logado: {firebase.logado()}</p>
           <button onClick={this.deslogar}>Deslogar</button>
         </div>
         
@@ -38,7 +52,7 @@ class Dashboard extends React.Component{
             <img src={foto} alt="foto"/>
           </div>
           <p>Postar +</p>
-          <button>Postar</button>
+          <button><Link to={'/postagens'}>Postar</Link></button>
         </div>
       </section>
     )

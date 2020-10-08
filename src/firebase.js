@@ -42,6 +42,15 @@ class Firebase{
         return firebase.auth().currentUser && firebase.auth().currentUser.email
     }
 
+    //Nome do user logado
+    async nomeUser(callback){
+        if(!firebase.auth().currentUser){
+            return null
+        }
+        const uid = firebase.auth().currentUser.uid
+        await firebase.database().ref("usuario").child(uid).once('value').then(callback)
+    }
+
     //deslogar
     deslogar(){
         return firebase.auth().signOut()
