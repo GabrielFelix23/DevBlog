@@ -21,12 +21,23 @@ class Firebase{
         this.app = firebase.database()
     }
 
-    //login
+    //Login
     logar(email, senha){
         return firebase.auth().signInWithEmailAndPassword(email, senha)
     }
+    
+    //Cadastrar
+    async cadastrar(nome, email, senha){
+        await firebase.auth().createUserWithEmailAndPassword(email, senha)
 
-    //para ver se o user está conectado
+        const uid = firebase.auth().currentUser.uid
+
+        return firebase.database().ref('usuario').child(uid).set({
+            nome: nome
+        })
+    }
+
+    //Para ver se o user está conectado
     Logado(){
         return new Promise((logado) => {
             firebase.auth().onAuthStateChanged(logado)
