@@ -1,0 +1,75 @@
+section#containerDeslogar{
+    width: 100%;
+    height: 75vh;
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 0 auto;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+section#containerDeslogar .caixas{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    max-width: 200px;
+    background: #81F7F3;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px
+}
+
+section#containerDeslogar .caixas .fotoPerfil{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px
+}
+
+section#containerDeslogar .caixas .fotoPerfil img{
+    width: 45px;
+    height: 45px;
+}
+
+section#containerDeslogar .caixas p{
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+section#containerDeslogar .caixas button{
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    padding: 6px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.1s
+}
+
+section#containerDeslogar .caixas button:hover{
+    background:  #F2F2F2
+}
+
+/*FUNDO VERDE*/
+
+section#containerDeslogar .fundoVerde{
+    background: #2EFE2E
+}
+section#containerDeslogar .fundoVerde .foto{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px
+}
+section#containerDeslogar .fundoVerde .foto img{
+    width: 45px;
+    height: 45px;
+}
+section#containerDeslogar .fundoVerde p{
+    margin-bottom: 45px
+}

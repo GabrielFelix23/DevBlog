@@ -42,9 +42,13 @@ class Firebase{
         return firebase.auth().currentUser && firebase.auth().currentUser.email
     }
 
+    //deslogar
+    deslogar(){
+        return firebase.auth().signOut()
+    }
 
     //Para ver se o user está online
-    Online(){
+    online(){
         return new Promise((logado) => {
             firebase.auth().onAuthStateChanged(logado)
         })

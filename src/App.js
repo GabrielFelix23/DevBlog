@@ -20,7 +20,7 @@ class App extends React.Component{
   }
 
   componentDidMount(){
-    firebase.Online().then((resultado) => {
+    firebase.online().then((resultado) => {
       this.setState({
         estaLogado: resultado
       })

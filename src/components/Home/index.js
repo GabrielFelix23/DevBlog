@@ -4,7 +4,7 @@ import './home.css'
 
 class Home extends React.Component{
   state = {
-    posts: []
+    posts: [],
   }
 
   componentDidMount(){
