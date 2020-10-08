@@ -15,7 +15,7 @@ class Cadastro extends React.Component{
     }
     this.cadastro = this.cadastro.bind(this) 
   }
-
+  
   cadastro(e){
     const {nome, email, senha} = this.state
     firebase.cadastrar(nome, email, senha)

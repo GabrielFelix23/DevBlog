@@ -1,4 +1,6 @@
 import React from 'react'
+import firebase from '../../firebase'
+import {withRouter} from 'react-router-dom'
 
 class Dashboard extends React.Component{
   render() {
@@ -10,4 +12,4 @@ class Dashboard extends React.Component{
   }
 }
 
-export default Dashboard
+export default withRouter(Dashboard)

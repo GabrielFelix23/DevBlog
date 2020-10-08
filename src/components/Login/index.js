@@ -1,6 +1,6 @@
 import React from 'react'
 import firebase from '../../firebase'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 import './login.css'
 
@@ -15,10 +15,19 @@ class Login extends React.Component{
     this.login = this.login.bind(this)
   }
 
+  componentDidMount(){
+    if(firebase.logado()){
+      return this.props.history.replace('/dashboard')
+    }
+  }
+
   login(e) {
       const {email, senha} = this.state
 
       firebase.logar(email, senha)
+      .then(() => {
+        this.props.history.replace('/dashboard')
+      })
       .catch((error) => {
           this.setState({
             erro: "Erro ao logar! Tente novamente mais tarde."
@@ -54,4 +63,4 @@ class Login extends React.Component{
   }
 }
 
-export default Login
+export default withRouter(Login)

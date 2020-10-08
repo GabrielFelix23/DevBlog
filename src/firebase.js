@@ -37,8 +37,14 @@ class Firebase{
         })
     }
 
-    //Para ver se o user está conectado
-    Logado(){
+    //Para se manter conectado
+    logado(){
+        return firebase.auth().currentUser && firebase.auth().currentUser.email
+    }
+
+
+    //Para ver se o user está online
+    Online(){
         return new Promise((logado) => {
             firebase.auth().onAuthStateChanged(logado)
         })
