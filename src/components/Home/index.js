@@ -17,7 +17,8 @@ class Home extends React.Component{
           key: childItem.key,
           autor: childItem.val().autor,
           descricao: childItem.val().descricao,
-          image: childItem.val().image
+          image: childItem.val().image,
+          perfil: childItem.val().perfil
         })
         state.posts.reverse()
         this.setState(state)
@@ -31,7 +32,10 @@ class Home extends React.Component{
         {this.state.posts.map((posts) => {
           return(   
             <article key={posts.key}>
-                <p className="titulo">Autor: {posts.autor}</p>
+                <div className="containerPerfil">
+                  <img className="fotoDePerfil" src={posts.perfil}/>
+                  <p className="titulo">{posts.autor}</p>
+                </div>
                 <img src={posts.image} alt="Capa do post"/>
                 <p className="descricao">Comentário: {posts.descricao}</p>
             </article>  
