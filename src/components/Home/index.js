@@ -10,7 +10,7 @@ class Home extends React.Component{
   componentDidMount(){
     firebase.app.ref('posts').on('value', (snapshot) => {
       let state = this.state
-      state.posts = []
+      this.state.posts = []
 
       snapshot.forEach((childItem) => {
         state.posts.push({

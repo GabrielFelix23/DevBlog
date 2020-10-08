@@ -15,12 +15,6 @@ class Login extends React.Component{
     this.login = this.login.bind(this)
   }
 
-  componentDidMount(){
-    if(firebase.logado()){
-      return this.props.history.replace('/dashboard')
-    }
-  }
-
   login(e) {
       const {email, senha} = this.state
 
@@ -34,6 +28,12 @@ class Login extends React.Component{
           })
       })
       e.preventDefault()
+  }
+
+  componentDidMount(){
+    if(firebase.logado()){
+      return this.props.history.replace('/dashboard')
+    }
   }
 
   render() {

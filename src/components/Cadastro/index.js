@@ -37,15 +37,15 @@ class Cadastro extends React.Component{
 
           <form onSubmit={this.cadastro}>
             <label>Nome: </label><br/>
-            <input type="text" placeholder="Seu nome: " autoFocus value={this.state.nome}
+            <input type="text" placeholder="Seu nome: " autoFocus required value={this.state.nome}
               onChange={(e) => this.setState({nome: e.target.value})}/><br/>
 
             <label>Email: </label><br/>
-            <input type="text" placeholder="teste@teste.com" autoFocus value={this.state.email}
+            <input type="text" placeholder="teste@teste.com" autoFocus required value={this.state.email}
               onChange={(e) => this.setState({email: e.target.value})}/><br/>
 
             <label>Senha: </label><br/>
-            <input type="password" placeholder="****" autoFocus value={this.state.senha}
+            <input type="password" placeholder="****" autoFocus required value={this.state.senha}
               onChange={(e) => this.setState({senha: e.target.value})}/><br/>
 
             <button type="submit">Cadastrar</button>

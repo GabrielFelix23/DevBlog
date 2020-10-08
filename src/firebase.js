@@ -19,7 +19,6 @@ class Firebase{
             firebase.initializeApp(firebaseConfig)
         }
         this.app = firebase.database()
-        this.auth = firebase.auth()
     }
 
     //Login
@@ -43,6 +42,11 @@ class Firebase{
         return firebase.auth().currentUser && firebase.auth().currentUser.email
     }
 
+    //deslogar
+    deslogar(){
+        return firebase.auth().signOut()
+    }
+
     //Nome do user logado
     async nomeUser(callback){
         if(!firebase.auth().currentUser){
@@ -50,11 +54,6 @@ class Firebase{
         }
         const uid = firebase.auth().currentUser.uid
         await firebase.database().ref("usuario").child(uid).once('value').then(callback)
-    }
-
-    //deslogar
-    deslogar(){
-        return firebase.auth().signOut()
     }
 
     //Para ver se o user está online
