@@ -1,6 +1,6 @@
 import React from 'react'
 import firebase from '../../firebase'
-import {withRouter} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 import './cadastro.css'
 
@@ -49,6 +49,7 @@ class Cadastro extends React.Component{
               onChange={(e) => this.setState({senha: e.target.value})}/><br/>
 
             <button type="submit">Cadastrar</button>
+            <button type="submit" className="buttonCancelar"><Link to={'/login'}>Cancelar</Link></button>
           </form>
 
        </div>

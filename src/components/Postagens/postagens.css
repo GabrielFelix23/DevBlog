@@ -1,24 +1,31 @@
-section#login{
+section#postagen{
     width: 100%;
     max-width: 930px;
     margin: 0 auto;
     padding: 0 auto
 }
 
-section#login .containerLogin{
+section#postagen h1{
+    font-size: 30px;
+    width: 38%;
+    margin: 0 auto;
+    padding: 0 auto
+}
+
+section#postagen .containerpostagen{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 70vh;
+    height: 75vh;
 }
 
-section#login form{
+section#postagen form{
     border: 2px solid #fd8469;
     border-radius: 5px;
     background: #fff;
     width: 100%;
-    height: 320px;
+    height: 420px;
     max-width: 350px;
     padding: 20px;
     margin-top: 20px;
@@ -28,17 +35,17 @@ section#login form{
     flex-direction: column
 } 
 
-section#login h2{
+section#postagen h2{
     color: #DF013A
 }
 
-section#login form label{
+section#postagen form label{
     margin-top: 15px;
     margin-bottom: 5px;
     font-size: 17px
 }
 
-section#login form input{
+section#postagen form input{
     border: none;
     border: 1px solid #6E6E6E;
     border-radius: 5px;
@@ -47,7 +54,7 @@ section#login form input{
     padding: 0 10px;
 }
 
-section#login form button{
+section#postagen form button{
     border: none;
     margin-top: 20px;
     border-radius: 5px;
@@ -56,27 +63,28 @@ section#login form button{
     font-size: 20px;
     padding: 5px;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     transition: 0.1s
 }
-section#login form button:hover{
+section#postagen form button:hover{
     background: #f76b4f
 }
 
-section#login footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 16px
+section#postagen form .buttonCancelar{
+    border: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: #2ECCFA;
+    padding: 5px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    transition: 0.1s
+}
+section#postagen form .buttonCancelar:hover{
+   background: #01A9DB
 }
 
-section#login footer a{
+section#postagen form .buttonCancelar a{
     text-decoration: none;
-    color: #fd8469;
-    font-weight: bold
-}
-
-section#login footer a:hover{
-    color: #f76b4f
+    color: #fff
 }
