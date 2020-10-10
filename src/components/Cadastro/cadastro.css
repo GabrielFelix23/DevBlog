@@ -63,7 +63,7 @@ section#cadastro form button:hover{
     background: #f76b4f
 }
 
-section#cadastro form .buttonCancelar{
+section#cadastro form a{
     border: none;
     margin-top: 20px;
     border-radius: 5px;
@@ -71,13 +71,12 @@ section#cadastro form .buttonCancelar{
     padding: 5px;
     cursor: pointer;
     margin-bottom: 0px;
-    transition: 0.1s
-}
-section#cadastro form .buttonCancelar:hover{
-   background: #01A9DB
-}
-
-section#cadastro form .buttonCancelar a{
+    transition: 0.1s;
     text-decoration: none;
-    color: #fff
+    color: #fff;
+    font-size: 20px;
+    text-align: center
+}
+section#cadastro form a:hover{
+   background: #01A9DB
 }

@@ -52,7 +52,7 @@ class Dashboard extends React.Component{
             <img src={foto} alt="foto"/>
           </div>
           <p>Postar +</p>
-          <button><Link to={'/postagens'}>Postar</Link></button>
+          <Link to={'/postagens'}>Postar</Link>
         </div>
       </section>
     )

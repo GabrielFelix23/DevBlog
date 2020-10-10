@@ -38,7 +38,7 @@ class Postagens extends React.Component{
               onChange={(e) => this.setState({comentario: e.target.value})}/><br/>
 
             <button type="submit">Postar</button>
-            <button type="submit" className="buttonCancelar"><Link to={'/dashboard'}>Cancelar</Link></button>
+           <Link to={'/dashboard'} className="buttonCancelar">Cancelar</Link>
           </form>
 
        </div>

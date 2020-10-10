@@ -49,7 +49,7 @@ class Cadastro extends React.Component{
               onChange={(e) => this.setState({senha: e.target.value})}/><br/>
 
             <button type="submit">Cadastrar</button>
-            <button type="submit" className="buttonCancelar"><Link to={'/login'}>Cancelar</Link></button>
+            <Link to={'/login'} className="buttonCancelar">Cancelar</Link>
           </form>
 
        </div>

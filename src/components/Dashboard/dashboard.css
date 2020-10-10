@@ -56,6 +56,23 @@ section#containerDeslogar .caixas button:hover{
     background:  #F2F2F2
 }
 
+section#containerDeslogar .caixas a{
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    padding: 6px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.1s;
+    text-decoration: none;
+    text-align: center;
+}
+
+section#containerDeslogar .caixas a:hover{
+    background:  #F2F2F2
+}
+
 /*FUNDO VERDE*/
 
 section#containerDeslogar .fundoVerde{

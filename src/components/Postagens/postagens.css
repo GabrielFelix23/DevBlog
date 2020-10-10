@@ -74,17 +74,16 @@ section#postagen form .buttonCancelar{
     border: none;
     margin-top: 20px;
     border-radius: 5px;
-    background: #2ECCFA;
+    color: #fff;
+    font-size: 20px;
     padding: 5px;
     cursor: pointer;
     margin-bottom: 0px;
-    transition: 0.1s
+    transition: 0.1s;
+    background: #2ECCFA;
+    text-decoration: none;
+    text-align: center
 }
 section#postagen form .buttonCancelar:hover{
    background: #01A9DB
-}
-
-section#postagen form .buttonCancelar a{
-    text-decoration: none;
-    color: #fff
 }
