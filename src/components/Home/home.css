@@ -1,6 +1,6 @@
 section#posts{
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto;
     padding: 0 auto;
 }
@@ -13,7 +13,7 @@ section#posts article{
 
 section#posts article .containerPerfil{
     width: 100%;
-    max-width: 100px;
+    max-width: 60px;
     display: flex;
     flex-direction: row;
     align-items: center

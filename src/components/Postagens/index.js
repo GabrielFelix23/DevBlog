@@ -12,6 +12,7 @@ class Postagens extends React.Component{
       perfil: '',
       imagem: '',
       comentario: '',
+      sucesso: '',
       erro: ''
     }
     this.postar = this.postar.bind(this)
@@ -21,7 +22,9 @@ class Postagens extends React.Component{
     const {nome, perfil, imagem, comentario} = this.state
     firebase.postagem(nome, perfil, imagem, comentario)
     .then(() => {
-      alert("Postagem concluida com sucesso!")
+      this.setState({
+        sucesso: "Postado com sucesso!"
+      })
     }).catch((Erro) => {
       this.setState({
         erro: "Houve um erro ao postar. Tente novamente mais tarde!"
@@ -38,9 +41,11 @@ class Postagens extends React.Component{
 
   render() {
     return (
-     <section id="postagen">
-       <div className="containerpostagen">
+     <section id="postagem">
+       <div className="containerpostagem">
+          <h2 className="sucesso">{this.state.sucesso}</h2>
           <h2>{this.state.erro}</h2>
+
           <h1>Postagem:</h1>
           <form onSubmit={this.postar}>
             <label>Nome: </label><br/>

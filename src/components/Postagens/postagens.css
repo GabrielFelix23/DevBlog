@@ -1,18 +1,18 @@
-section#postagen{
+section#postagem{
     width: 100%;
     max-width: 930px;
     margin: 0 auto;
     padding: 0 auto
 }
 
-section#postagen h1{
+section#postagem h1{
     font-size: 30px;
     width: 38%;
     margin: 0 auto;
     padding: 0 auto
 }
 
-section#postagen .containerpostagen{
+section#postagem .containerpostagem{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -20,7 +20,7 @@ section#postagen .containerpostagen{
     height: 75vh;
 }
 
-section#postagen form{
+section#postagem form{
     border: 2px solid #fd8469;
     border-radius: 5px;
     background: #fff;
@@ -35,17 +35,21 @@ section#postagen form{
     flex-direction: column
 } 
 
-section#postagen h2{
+section#postagem h2{
     color: #DF013A
 }
 
-section#postagen form label{
+section#postagem .sucesso{
+    color: #3ADF00
+}
+
+section#postagem form label{
     margin-top: 15px;
     margin-bottom: 5px;
     font-size: 17px
 }
 
-section#postagen form input{
+section#postagem form input{
     border: none;
     border: 1px solid #6E6E6E;
     border-radius: 5px;
@@ -54,7 +58,7 @@ section#postagen form input{
     padding: 0 10px;
 }
 
-section#postagen form button{
+section#postagem form button{
     border: none;
     margin-top: 20px;
     border-radius: 5px;
@@ -66,11 +70,11 @@ section#postagen form button{
     margin-bottom: 0px;
     transition: 0.1s
 }
-section#postagen form button:hover{
+section#postagem form button:hover{
     background: #f76b4f
 }
 
-section#postagen form .buttonCancelar{
+section#postagem form .buttonCancelar{
     border: none;
     margin-top: 20px;
     border-radius: 5px;
@@ -84,6 +88,6 @@ section#postagen form .buttonCancelar{
     text-decoration: none;
     text-align: center
 }
-section#postagen form .buttonCancelar:hover{
+section#postagem form .buttonCancelar:hover{
    background: #01A9DB
 }
