@@ -8,9 +8,31 @@ class Postagens extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      email: '',
-      senha: '',
+      nome: '',
+      perfil: '',
+      imagem: '',
+      comentario: '',
       erro: ''
+    }
+    this.postar = this.postar.bind(this)
+  }
+
+  postar(e){
+    const {nome, perfil, imagem, comentario} = this.state
+    firebase.postagem(nome, perfil, imagem, comentario)
+    .then(() => {
+      alert("Postagem concluida com sucesso!")
+    }).catch((Erro) => {
+      this.setState({
+        erro: "Houve um erro ao postar. Tente novamente mais tarde!"
+      })
+    })
+    e.preventDefault()
+  }
+  componentDidMount(){
+    if(!firebase.logado()){
+      this.props.history.replace('login')
+      return null
     }
   }
 
