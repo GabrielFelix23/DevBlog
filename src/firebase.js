@@ -56,18 +56,6 @@ class Firebase{
         await firebase.database().ref("usuario").child(uid).once('value').then(callback)
     }
 
-
-    //Postagem
-    async postagem(nome, perfil, imagem, comentario){
-        const uid = firebase.auth().currentUser.uid
-        await firebase.database().ref('posts').child(uid).set({
-            autor: nome,
-            descricao: comentario,
-            image: imagem,
-            perfil: perfil
-        })
-    }
-
     //Para ver se o user está online
     online(){
         return new Promise((logado) => {

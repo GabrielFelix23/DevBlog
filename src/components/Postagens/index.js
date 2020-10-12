@@ -8,7 +8,6 @@ class Postagens extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      nome: '',
       perfil: '',
       imagem: '',
       comentario: '',
@@ -19,15 +18,20 @@ class Postagens extends React.Component{
   }
 
   postar(e){
-    const {nome, perfil, imagem, comentario} = this.state
-    firebase.postagem(nome, perfil, imagem, comentario)
+    let post = firebase.app.ref('posts')
+    let chave = post.push().key
+
+    post.child(chave).set({
+      autor: localStorage.nome,
+      descricao: this.state.comentario,
+      image: this.state.imagem,
+      perfil: this.state.perfil
+    })
     .then(() => {
-      this.setState({
-        sucesso: "Postado com sucesso!"
-      })
+      this.props.history.replace('/')
     }).catch((Erro) => {
       this.setState({
-        erro: "Houve um erro ao postar. Tente novamente mais tarde!"
+        erro: "Houve um erro ao postar! Tente novamente mais tarde."
       })
     })
     e.preventDefault()
@@ -48,10 +52,6 @@ class Postagens extends React.Component{
 
           <h1>Postagem:</h1>
           <form onSubmit={this.postar}>
-            <label>Nome: </label><br/>
-            <input type="text" placeholder="Jorge..." autoFocus value={this.state.nome}
-              onChange={(e) => this.setState({nome: e.target.value})}/><br/>
-
             <label>Foto de perfil: </label><br/>
             <input type="text" placeholder="https://..." autoFocus value={this.state.perfil}
               onChange={(e) => this.setState({perfil: e.target.value})}/><br/>
