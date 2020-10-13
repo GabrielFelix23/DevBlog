@@ -44,6 +44,7 @@ class Dashboard extends React.Component{
           </div>
           <p>Olá {this.state.nome}</p>
           <p>Logado: {firebase.logado()}</p>
+          <Link to={'/perfil'}>Perfil</Link>
           <button onClick={this.deslogar}>Deslogar</button>
         </div>
         

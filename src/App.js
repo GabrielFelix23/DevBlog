@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Cadastro from './components/Cadastro'
 import Dashboard from './components/Dashboard'
+import Perfil from './components/Perfil'
 import Postagens from './components/Postagens'
 
 import Error from './components/Error'
@@ -36,6 +37,7 @@ class App extends React.Component{
           <Route exact path="/login" component={Login}/>
           <Route exact path="/cadastro" component={Cadastro}/>
           <Route exact path="/dashboard" component={Dashboard}/>
+          <Route exact path="/perfil" component={Perfil}/>
           <Route exact path="/postagens" component={Postagens}/>
           
           <Route path="*" component={Error}/>
