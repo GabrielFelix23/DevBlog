@@ -9,12 +9,16 @@ class Postagens extends React.Component{
     super(props)
     this.state = {
       perfil: '',
-      imagem: '',
+      imagem: null,
       comentario: '',
       sucesso: '',
-      erro: ''
+      erro: '',
+      url: '',
+      progress: 0
     }
     this.postar = this.postar.bind(this)
+    this.fotoPost = this.fotoPost.bind(this)
+    this.salvarFoto = this.salvarFoto.bind(this)
   }
 
   postar(e){
@@ -36,6 +40,45 @@ class Postagens extends React.Component{
     })
     e.preventDefault()
   }
+
+  fotoPost = async (e) => {
+    if(e.target.files[0]){
+      const image = e.target.files[0]
+      if(image.type == 'image/png' || image.type == 'image/jpg' || image.type == 'image/jpeg'){
+        await this.setState({imagem: image})
+        this.salvarFoto()
+      }else{
+        alert("Apenas arquivos PNG e jPEG.")
+        this.setState({imagem: null})
+        return null
+      }
+    }
+  }
+
+  salvarFoto = async () => {
+    const {imagem} = this.state
+    const uid = firebase.Uid()
+    const salvandoImg = firebase.storage.ref(`images/${uid}/${imagem.name}`).put(imagem)
+
+    await salvandoImg.on('state_change', (snapshot) => {
+      //progresso
+      const progress = Math.round(snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      this.setState({progress: progress})
+
+    }, (erro) => {
+      //Erro
+      console.log("Erro: " + erro)
+
+    }, (sucesso) => {
+      //Pegando a url da imagem para postar no feed
+      firebase.storage.ref(`images/${uid}`)
+      .child(imagem.name).getDownloadURL()
+      .then((url) => {
+        this.setState({url: url})
+      })
+    })
+  }
+
   componentDidMount(){
     if(!firebase.logado()){
       this.props.history.replace('login')
@@ -52,14 +95,12 @@ class Postagens extends React.Component{
 
           <h1>Postagem:</h1>
           <form onSubmit={this.postar}>
-            <label>Foto de perfil: </label><br/>
-            <input type="text" placeholder="https://..." autoFocus value={this.state.perfil}
-              onChange={(e) => this.setState({perfil: e.target.value})}/><br/>
-
-            <label>Imagem do Post: </label><br/>
-            <input type="text" placeholder="https://..." autoFocus value={this.state.imagem}
-              onChange={(e) => this.setState({imagem: e.target.value})}/><br/>
-
+            <input type="file" onChange={this.fotoPost}/>
+            {this.state.url != '' ? 
+              <img src={this.state.url} width="250" height="150" alt="Capa do post"/>  
+              :
+              <progress value={this.state.progress} max="100"/>
+            }
             <label>Comentário: </label><br/>
             <input type="text" placeholder="Está imagem é..." autoFocus value={this.state.comentario}
               onChange={(e) => this.setState({comentario: e.target.value})}/><br/>

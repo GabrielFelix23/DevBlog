@@ -49,7 +49,7 @@ section#postagem form label{
     font-size: 17px
 }
 
-section#postagem form input{
+section#postagem form input[type = text]{
     border: none;
     border: 1px solid #6E6E6E;
     border-radius: 5px;

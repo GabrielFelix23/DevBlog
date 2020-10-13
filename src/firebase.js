@@ -19,6 +19,7 @@ class Firebase{
             firebase.initializeApp(firebaseConfig)
         }
         this.app = firebase.database()
+        this.storage = firebase.storage() 
     }
 
     //Login
@@ -40,6 +41,11 @@ class Firebase{
     //Para se manter conectado
     logado(){
         return firebase.auth().currentUser && firebase.auth().currentUser.email
+    }
+
+    //Pegando UID
+    Uid(){
+        return firebase.auth().currentUser && firebase.auth().currentUser.uid
     }
 
     //deslogar
