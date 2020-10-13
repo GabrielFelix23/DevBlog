@@ -8,10 +8,9 @@ class Postagens extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      perfil: '',
       imagem: null,
+      titulo: '',
       comentario: '',
-      sucesso: '',
       erro: '',
       url: '',
       progress: 0
@@ -21,15 +20,24 @@ class Postagens extends React.Component{
     this.salvarFoto = this.salvarFoto.bind(this)
   }
 
-  postar(e){
+  componentDidMount(){
+    if(!firebase.logado()){
+      this.props.history.replace('login')
+      return null
+    }
+  }
+
+  postar = async (e) => {
+    e.preventDefault()
+
     let post = firebase.app.ref('posts')
     let chave = post.push().key
 
     post.child(chave).set({
+      titulo: this.state.titulo,
       autor: localStorage.nome,
       descricao: this.state.comentario,
-      image: this.state.imagem,
-      perfil: this.state.perfil
+      image: this.state.url,
     })
     .then(() => {
       this.props.history.replace('/')
@@ -38,15 +46,15 @@ class Postagens extends React.Component{
         erro: "Houve um erro ao postar! Tente novamente mais tarde."
       })
     })
-    e.preventDefault()
   }
 
   fotoPost = async (e) => {
     if(e.target.files[0]){
       const image = e.target.files[0]
-      if(image.type == 'image/png' || image.type == 'image/jpg' || image.type == 'image/jpeg'){
+
+      if(image.type === 'image/png' || image.type === 'image/jpg' || image.type === 'image/jpeg'){
         await this.setState({imagem: image})
-        this.salvarFoto()
+        await this.salvarFoto()
       }else{
         alert("Apenas arquivos PNG e jPEG.")
         this.setState({imagem: null})
@@ -58,18 +66,21 @@ class Postagens extends React.Component{
   salvarFoto = async () => {
     const {imagem} = this.state
     const uid = firebase.Uid()
+
     const salvandoImg = firebase.storage.ref(`images/${uid}/${imagem.name}`).put(imagem)
 
-    await salvandoImg.on('state_change', (snapshot) => {
+    await salvandoImg.on('state_changed', (snapshot) => {
       //progresso
-      const progress = Math.round(snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      const progress = Math.round(
+        (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      )
       this.setState({progress: progress})
 
     }, (erro) => {
       //Erro
       console.log("Erro: " + erro)
 
-    }, (sucesso) => {
+    }, () => {
       //Pegando a url da imagem para postar no feed
       firebase.storage.ref(`images/${uid}`)
       .child(imagem.name).getDownloadURL()
@@ -79,34 +90,31 @@ class Postagens extends React.Component{
     })
   }
 
-  componentDidMount(){
-    if(!firebase.logado()){
-      this.props.history.replace('login')
-      return null
-    }
-  }
-
   render() {
     return (
      <section id="postagem">
        <div className="containerpostagem">
-          <h2 className="sucesso">{this.state.sucesso}</h2>
           <h2>{this.state.erro}</h2>
 
           <h1>Postagem:</h1>
           <form onSubmit={this.postar}>
-            <input type="file" onChange={this.fotoPost}/>
-            {this.state.url != '' ? 
+            <input type="file" onChange={this.fotoPost} required/>
+            {this.state.url !== '' ? 
               <img src={this.state.url} width="250" height="150" alt="Capa do post"/>  
               :
               <progress value={this.state.progress} max="100"/>
             }
+            
+            <label>Titulo: </label><br/>
+            <input type="text" placeholder="Está imagem é..." autoFocus value={this.state.titulo}
+              onChange={(e) => this.setState({titulo: e.target.value})} required/><br/>
+            
             <label>Comentário: </label><br/>
             <input type="text" placeholder="Está imagem é..." autoFocus value={this.state.comentario}
-              onChange={(e) => this.setState({comentario: e.target.value})}/><br/>
+              onChange={(e) => this.setState({comentario: e.target.value})} required/><br/>
 
             <button type="submit">Postar</button>
-           <Link to={'/dashboard'} className="buttonCancelar">Cancelar</Link>
+            <Link to={'/dashboard'} className="buttonCancelar">Cancelar</Link>
           </form>
 
        </div>
