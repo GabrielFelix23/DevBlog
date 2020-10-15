@@ -24,7 +24,7 @@ class Login extends React.Component{
       })
       .catch((error) => {
           this.setState({
-            erro: "Erro ao logar! Tente novamente mais tarde."
+            erro: "Email ou senha incorreta."
           })
       })
       e.preventDefault()

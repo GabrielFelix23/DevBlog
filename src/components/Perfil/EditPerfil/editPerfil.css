@@ -1,0 +1,82 @@
+article#containerEditPerfil{
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+    padding: 0 auto
+}
+
+article#containerEditPerfil .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #FD8469;
+    border-radius: 5px;
+    background: #fff;
+    width: 100%;
+    height: 340px;
+    margin-top: 70px 
+}
+
+article#containerEditPerfil .container form label{
+    font-size: 18px;
+}
+
+article#containerEditPerfil .container  form input{
+    border: none;
+    border: 1px solid #848484;
+    border-radius: 5px;
+    width: 250px;
+    height: 30px;
+    padding: 0 10px;
+    margin: 5px 0 
+}
+
+article#containerEditPerfil .container form .containerButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+article#containerEditPerfil .container form .containerButton button{
+    border: none;
+    background: #FD8469;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.1s
+}
+
+article#containerEditPerfil .container form .containerButton button:hover{
+    background: #FF8000
+}
+
+article#containerEditPerfil .container form .containerButton .buttonVoltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    text-decoration: none;
+    background: #31B404;
+    color: #fff;
+    font-size: 15.5px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.1s
+}
+
+article#containerEditPerfil .container form .containerButton .buttonVoltar:hover{
+    background: #088A08
+}
