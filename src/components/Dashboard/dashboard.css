@@ -32,8 +32,9 @@ section#containerDeslogar .caixas .fotoPerfil{
 }
 
 section#containerDeslogar .caixas .fotoPerfil img{
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px
 }
 
 section#containerDeslogar .caixas p{
@@ -88,6 +89,7 @@ section#containerDeslogar .fundoVerde .foto img{
     width: 45px;
     height: 45px;
 }
+
 section#containerDeslogar .fundoVerde p{
     margin-bottom: 45px
 }

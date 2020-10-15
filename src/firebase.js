@@ -63,6 +63,15 @@ class Firebase{
         await firebase.database().ref("usuario").child(uid).once('value').then(callback)
     }
 
+    async fotoPerfil(call){
+        if(!firebase.auth().currentUser){
+            return null
+        }
+
+        const uid = firebase.auth().currentUser.uid
+        await firebase.database().ref('fotoUser').child(uid).once('value').then(call)
+    }
+
     //Para ver se o user está online
     online(){
         return new Promise((logado) => {

@@ -20,7 +20,7 @@ class Cadastro extends React.Component{
     const {nome, email, senha} = this.state
     firebase.cadastrar(nome, email, senha)
     .then(() => {
-      this.props.history.replace('/dashboard')
+      this.props.history.replace('/fotoPerfil')
     }).catch((error) => {
       this.setState({
         erro: "Ocorreu um erro ao cadastrar o seu perfil.\nTente novamente mais tarde."

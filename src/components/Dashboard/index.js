@@ -11,6 +11,7 @@ class Dashboard extends React.Component{
     super(props)
     this.state = {
       nome: localStorage.nome,
+      fotoPerfil: localStorage.fotoPerfil
     }
     this.deslogar = this.deslogar.bind(this)
   }
@@ -21,17 +22,28 @@ class Dashboard extends React.Component{
       return null
     }
 
-    firebase.nomeUser((info)=>{
+    await firebase.nomeUser((info)=>{
       localStorage.nome = info.val().nome
       this.setState({nome: localStorage.nome })
     })
+    this.foto()
   }
-
+ 
+  async foto(){
+    if(!firebase.logado()){
+      this.props.history.replace("/login")
+      return null
+    }
+    await firebase.fotoPerfil((foto) => {
+      localStorage.fotoPerfil = foto.val().fotoPerfil
+      this.setState({fotoPerfil: localStorage.fotoPerfil})
+    })
+  }
 
   deslogar(){
     firebase.deslogar().then(() => {
       this.props.history.push('/')
-      localStorage.removeItem('nome')
+      localStorage.removeItem('nome','fotoPerfil')
     })
   }
 
@@ -40,7 +52,7 @@ class Dashboard extends React.Component{
       <section id="containerDeslogar">
         <div className="caixas">
           <div className="fotoPerfil">
-            <img src={fotoPerfil} alt="foto"/>
+            <img src={this.state.fotoPerfil} alt="Foto de perfil" className="perfil"/>
           </div>
           <p>Olá {this.state.nome}</p>
           <p>Logado: {firebase.logado()}</p>

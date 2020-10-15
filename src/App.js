@@ -9,7 +9,8 @@ import Cadastro from './components/Cadastro'
 import Dashboard from './components/Dashboard'
 import Perfil from './components/Perfil'
 import EditPerfil from './components/Perfil/EditPerfil'
-import FotoPerfil from './components/Perfil/FotoPerfil'
+import FotoPerfil from './components/Perfil/EditFotoPerfil'
+import EditFotoPerfil from './components/Perfil/EditFotoPerfil'
 import Postagens from './components/Postagens'
 
 import Error from './components/Error'
@@ -38,10 +39,11 @@ class App extends React.Component{
           <Route exact path="/" component={Home}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/cadastro" component={Cadastro}/>
+          <Route exact path="/fotoPerfil" component={FotoPerfil}/>
           <Route exact path="/dashboard" component={Dashboard}/>
           <Route exact path="/perfil" component={Perfil}/>
           <Route exact path="/editCadastro" component={EditPerfil}/>
-          <Route exact path="/fotoPerfil" component={FotoPerfil}/>
+          <Route exact path="/editfotoPerfil" component={EditFotoPerfil}/>
           <Route exact path="/postagens" component={Postagens}/>
           
           <Route path="*" component={Error}/>

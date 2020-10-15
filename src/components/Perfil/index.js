@@ -20,7 +20,7 @@ class Perfil extends React.Component{
                <div className="container">
                     <img src={IconePerfil} alt="incone perfil"/>
                     <Link to={'/editCadastro'}>Editar Login</Link>
-                    <Link to={'/fotoPerfil'} className="verde">Foto de perfil</Link>
+                    <Link to={'/editfotoPerfil'} className="verde">Foto de perfil</Link>
                </div>
            </article>
         )
