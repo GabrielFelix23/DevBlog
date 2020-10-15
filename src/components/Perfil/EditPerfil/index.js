@@ -15,8 +15,14 @@ class EditPerfil extends React.Component{
         this.editar = this.editar.bind(this)
     }
 
-    editar(){
+    async editar(e){
+        e.preventDefault()
+        const {nome, email, senha} = this.state
 
+        const uid = firebase.Uid()
+        await firebase.app.ref('usuario').child(uid).set({
+            nome: nome,
+        })
     }
 
     async componentDidMount(){
@@ -32,17 +38,17 @@ class EditPerfil extends React.Component{
                 <div className="container">
                     <form onSubmit={this.editar}>
                         <label>Nome: </label><br/>
-                        <input type="text" placeholder="Danilo..." required
+                        <input type="text" placeholder="Teste..."
                             value={this.state.nome} onChange={(e) => this.setState({nome: e.target.value})}/><br/>
 
                         <label>Email: </label><br/>
-                        <input type="email" placeholder="teste@teste.com" required
+                        <input type="email" placeholder="teste@teste.com"
                             value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
                         
                         <label>Senha: </label><br/>
-                        <input type="Password" placeholder="****" required
+                        <input type="Password" placeholder="****"
                             value={this.state.senha} onChange={(e) => this.setState({senha: e.target.value})}/><br/>
-
+                        
                         <div className="containerButton">
                             <button type="submit">Editar</button>
                             <Link to={'/perfil'} className="buttonVoltar">Voltar</Link>
