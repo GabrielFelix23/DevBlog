@@ -5,6 +5,10 @@ article#containerfotoPerfil{
     padding: 0 auto
 }
 
+article#containerfotoPerfil{
+    margin-top: 50px
+}
+
 article#containerfotoPerfil .container{
     display: flex;
     flex-direction: column;
@@ -16,7 +20,7 @@ article#containerfotoPerfil .container{
     background: #fff;
     width: 100%;
     height: 300px;
-    margin-top: 70px 
+    margin-top: 10px 
 }
 
 article#containerfotoPerfil .container form img{

@@ -23,6 +23,8 @@ class FotoDePerfil extends React.Component{
 
         firebase.app.ref('fotoUser').child(uid).set({
             fotoPerfil: this.state.url
+        }).then(() => {
+            this.props.history.replace("/dashboard")
         })
     }
 
@@ -67,7 +69,7 @@ class FotoDePerfil extends React.Component{
 
     async componentDidMount(){
         if(!firebase.logado()){
-            await this.props.history.replace('/login')
+            await this.props.history.replace('/cadastro')
             return null
         }
      }
@@ -75,6 +77,7 @@ class FotoDePerfil extends React.Component{
     render() {
         return (
             <article id="containerfotoPerfil">
+                <h1>Foto de perfil: </h1>
                 <div className="container">
                     <form onSubmit={this.foto}>
                         <input type="file" onChange={this.fotoUser} required/>
@@ -86,7 +89,7 @@ class FotoDePerfil extends React.Component{
                         
                         <div className="containerButton">
                             <button type="submit">Pronto</button>
-                            <Link to={'/perfil'} className="buttonVoltar">Voltar</Link>
+                            <Link to={'/dashboard'} className="buttonVoltar">Não agora</Link>
                         </div>
                     </form>
                 </div>

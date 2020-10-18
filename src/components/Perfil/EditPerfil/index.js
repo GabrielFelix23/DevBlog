@@ -38,17 +38,9 @@ class EditPerfil extends React.Component{
                 <div className="container">
                     <form onSubmit={this.editar}>
                         <label>Nome: </label><br/>
+                        
                         <input type="text" placeholder="Teste..."
-                            value={this.state.nome} onChange={(e) => this.setState({nome: e.target.value})}/><br/>
-
-                        <label>Email: </label><br/>
-                        <input type="email" placeholder="teste@teste.com"
-                            value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
-                        
-                        <label>Senha: </label><br/>
-                        <input type="Password" placeholder="****"
-                            value={this.state.senha} onChange={(e) => this.setState({senha: e.target.value})}/><br/>
-                        
+                            value={this.state.nome} onChange={(e) => this.setState({nome: e.target.value})}/><br/>                        
                         <div className="containerButton">
                             <button type="submit">Editar</button>
                             <Link to={'/perfil'} className="buttonVoltar">Voltar</Link>

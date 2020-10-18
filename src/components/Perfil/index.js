@@ -16,11 +16,10 @@ class Perfil extends React.Component{
     render() {
         return (
            <article id="containerPerfil">
-               <Link to={'/dashboard'} className="voltar">Voltar</Link>
                <div className="container">
                     <img src={IconePerfil} alt="incone perfil"/>
-                    <Link to={'/editCadastro'}>Editar Login</Link>
-                    <Link to={'/editfotoPerfil'} className="verde">Foto de perfil</Link>
+                    <Link to={'/editCadastro'}>Editar Perfil</Link>
+                    <Link to={'/dashboard'} className="voltar">Voltar</Link>
                </div>
            </article>
         )

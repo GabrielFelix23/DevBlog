@@ -4,14 +4,13 @@ import {Link, withRouter} from 'react-router-dom'
 
 import './dashboard.css'
 import foto from './fotos.png'
-import fotoPerfil from './perfil.png'
 
 class Dashboard extends React.Component{
   constructor(props){
     super(props)
     this.state = {
       nome: localStorage.nome,
-      fotoPerfil: localStorage.fotoPerfil
+      fotoPerfil: localStorage.fotoPerfil,
     }
     this.deslogar = this.deslogar.bind(this)
   }
@@ -37,13 +36,15 @@ class Dashboard extends React.Component{
     await firebase.fotoPerfil((foto) => {
       localStorage.fotoPerfil = foto.val().fotoPerfil
       this.setState({fotoPerfil: localStorage.fotoPerfil})
+    }).catch((Erro) => {
+      console.log("Perfil sem foto!")
     })
   }
 
   deslogar(){
     firebase.deslogar().then(() => {
       this.props.history.push('/')
-      localStorage.removeItem('nome','fotoPerfil')
+      localStorage.removeItem('fotoPerfil')
     })
   }
 

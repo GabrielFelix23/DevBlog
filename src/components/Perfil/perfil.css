@@ -5,23 +5,6 @@ article#containerPerfil{
     padding: 0 auto
 }
 
-article#containerPerfil .voltar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #DF7401;
-    text-decoration: none;
-    background: #FF8000;
-    width: 100%;
-    max-width: 100px;
-    height: 30px;
-    border-radius: 5px;
-    margin: 10px 0 ;
-    color: #fff;
-    font-size: 17px
-}
-
 article#containerPerfil .container{
     display: flex;
     flex-direction: column;
@@ -53,18 +36,21 @@ article#containerPerfil .container a{
     font-size: 17px
 }
 
-article#containerPerfil .container a:hover{
-    background:  #F2F2F2
-}
+article#containerPerfil .container .voltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-article#containerPerfil .container .verde{
-    background:#01DF01;
-    border: 1px solid #31B404;
-    color: #fff
-}
-
-article#containerPerfil .container .verde:hover{
-    background: #31B404
+    border: 1px solid #DF7401;
+    text-decoration: none;
+    background: #FF8000;
+    width: 100%;
+    max-width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px 0 ;
+    color: #fff;
+    font-size: 17px
 }
 
 article#containerPerfil .container img{
