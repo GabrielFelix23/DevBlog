@@ -38,7 +38,6 @@ class EditPerfil extends React.Component{
                 <div className="container">
                     <form onSubmit={this.editar}>
                         <label>Nome: </label><br/>
-                        
                         <input type="text" placeholder="Teste..."
                             value={this.state.nome} onChange={(e) => this.setState({nome: e.target.value})}/><br/>                        
                         <div className="containerButton">

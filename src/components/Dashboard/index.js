@@ -53,7 +53,11 @@ class Dashboard extends React.Component{
       <section id="containerDeslogar">
         <div className="caixas">
           <div className="fotoPerfil">
-            <img src={this.state.fotoPerfil} alt="Foto de perfil" className="perfil"/>
+            {this.state.fotoPerfil === '' ?
+              <p>Ola</p>
+              :
+              <img src={this.state.fotoPerfil} alt="Foto de perfil" className="perfil"/>
+            }
           </div>
           <p>Olá {this.state.nome}</p>
           <p>Logado: {firebase.logado()}</p>
