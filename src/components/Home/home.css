@@ -1,6 +1,6 @@
 section#posts{
     width: 100%;
-    max-width: 550px;
+    max-width: 690px;
     margin: 0 auto;
     padding: 0 auto;
 }
@@ -19,15 +19,15 @@ section#posts article .containerPerfil{
     align-items: center
 }
 
-section#posts .containerPerfil .titulo{
-    margin-left: 15px;
-    font-size: 20px;
-}
-
 section#posts article .containerPerfil .fotoDePerfil{
     width: 100%;
     height: 60px;
     border-radius: 50px;
+}
+
+section#posts .containerPerfil .titulo{
+    margin-left: 15px;
+    font-size: 20px;
 }
 
 section#posts article img{
