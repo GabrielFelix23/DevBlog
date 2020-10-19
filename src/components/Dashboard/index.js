@@ -30,7 +30,7 @@ class Dashboard extends React.Component{
     this.foto()
   }
  
-  async foto(){
+  foto = async () => {
     if(!firebase.logado()){
       this.props.history.replace("/login")
       return null

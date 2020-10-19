@@ -16,9 +16,9 @@ class Cadastro extends React.Component{
     this.cadastro = this.cadastro.bind(this) 
   }
   
-  cadastro(e){
+  cadastro = async (e) =>{
     const {nome, email, senha} = this.state
-    firebase.cadastrar(nome, email, senha)
+    await firebase.cadastrar(nome, email, senha)
     .then(() => {
       this.props.history.replace('/fotoPerfil')
     }).catch((error) => {

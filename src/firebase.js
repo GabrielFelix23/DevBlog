@@ -27,6 +27,16 @@ class Firebase{
     logar(email, senha){
         return firebase.auth().signInWithEmailAndPassword(email, senha)
     }
+  
+    //Para se manter conectado
+    logado(){
+        return firebase.auth().currentUser && firebase.auth().currentUser.email
+    }
+
+    //deslogar
+    deslogar(){
+        return firebase.auth().signOut()
+    }
     
     //Cadastrar
     async cadastrar(nome, email, senha){
@@ -39,22 +49,12 @@ class Firebase{
         })
     }
 
-    //Para se manter conectado
-    logado(){
-        return firebase.auth().currentUser && firebase.auth().currentUser.email
-    }
-
     //Pegando UID
     Uid(){
         return firebase.auth().currentUser && firebase.auth().currentUser.uid
     }
 
-    //deslogar
-    deslogar(){
-        return firebase.auth().signOut()
-    }
-
-    //Nome do user logado
+    //Pegando o nome do user logado
     async nomeUser(callback){
         if(!firebase.auth().currentUser){
             return null
@@ -63,6 +63,7 @@ class Firebase{
         await firebase.database().ref("usuario").child(uid).once('value').then(callback)
     }
 
+    //Pegando a foto de perfil
     async fotoPerfil(call){
         if(!firebase.auth().currentUser){
             return null

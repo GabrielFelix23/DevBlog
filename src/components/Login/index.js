@@ -15,10 +15,12 @@ class Login extends React.Component{
     this.login = this.login.bind(this)
   }
 
-  login(e) {
+  login = async (e) => {
+      e.preventDefault()
+
       const {email, senha} = this.state
 
-      firebase.logar(email, senha)
+      await firebase.logar(email, senha)
       .then(() => {
         window.location.reload()
         this.props.history.replace('/dashboard')
@@ -28,7 +30,6 @@ class Login extends React.Component{
             erro: "Email ou senha incorreta."
           })
       })
-      e.preventDefault()
   }
 
   componentDidMount(){
@@ -44,11 +45,11 @@ class Login extends React.Component{
           <h2>{this.state.erro}</h2>
           <form onSubmit={this.login}>
             <label>Email: </label><br/>
-            <input type="email" placeholder="teste@teste.com" autoFocus value={this.state.email}
-              onChange={(e) => this.setState({email: e.target.value})}/><br/>
+            <input type="email" placeholder="teste@teste.com" autoFocus required 
+            value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
 
             <label>Senha: </label><br/>
-            <input type="password" placeholder="****" autoFocus value={this.state.senha}
+            <input type="password" placeholder="****" required autoFocus value={this.state.senha}
               onChange={(e) => this.setState({senha: e.target.value})}/><br/>
 
             <button type="submit">Entrar</button>

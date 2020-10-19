@@ -7,8 +7,8 @@ class Home extends React.Component{
     posts: [],
   }
 
-  componentDidMount(){
-    firebase.app.ref('posts').on('value', (snapshot) => {
+  async componentDidMount(){
+    await firebase.app.ref('posts').on('value', (snapshot) => {
       let state = this.state
       this.state.posts = []
 

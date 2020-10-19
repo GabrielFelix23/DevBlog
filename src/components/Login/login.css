@@ -28,10 +28,6 @@ section#login form{
     flex-direction: column
 } 
 
-section#login h2{
-    color: #DF013A
-}
-
 section#login form label{
     margin-top: 15px;
     margin-bottom: 5px;
