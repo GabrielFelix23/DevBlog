@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import Logo from './logo.png'
 import firebase from '../../firebase'
 
@@ -9,20 +9,30 @@ class Header extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      teste: null
+      botaoEntrar: ''
     }
+    this.deslogar = this.deslogar.bind(this)
   }
 
   componentDidMount(){
     if(firebase.logado()){
       this.setState({
-        teste: this.state.teste =  'Sair',
+        botaoEntrar: 'Sair'
       })
     }else{
       this.setState({
-        teste: 'Entrar'
+        botaoEntrar: 'Entrar'
       })
     }
+  }
+
+  deslogar(){
+    firebase.deslogar().then(() => {
+      this.props.history.push('/')
+      localStorage.removeItem('nome')
+      localStorage.removeItem('fotoPerfil')
+      window.location.reload()
+    })
   }
   
   render() {
@@ -32,11 +42,14 @@ class Header extends React.Component{
           <img src={Logo}/> 
           <h1>DevBlog</h1>
         </Link>
-      
-        <Link className="button" to={'/login'}><h3>{this.state.teste}</h3></Link>
+        {this.state.botaoEntrar === 'Sair' ? 
+          <Link onClick={this.deslogar} className="button" to={'/login'}><h3>{this.state.botaoEntrar}</h3></Link>
+          :
+          <Link className="button" to={'/login'}><h3>{this.state.botaoEntrar}</h3></Link>
+        }
       </header>
     );
   }
 }
 
-export default Header
+export default withRouter(Header)
