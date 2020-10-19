@@ -38,6 +38,7 @@ class Postagens extends React.Component{
       autor: localStorage.nome,
       descricao: this.state.comentario,
       image: this.state.url,
+      perfil: localStorage.fotoPerfil
     })
     .then(() => {
       this.props.history.replace('/')
@@ -100,7 +101,7 @@ class Postagens extends React.Component{
           <form onSubmit={this.postar}>
             <input type="file" onChange={this.fotoPost} required/>
             {this.state.url !== '' ? 
-              <img src={this.state.url} width="250" height="150" alt="Capa do post"/>  
+              <img src={this.state.url} alt="Capa do post"/>  
               :
               <progress value={this.state.progress} max="100"/>
             }

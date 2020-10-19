@@ -17,7 +17,11 @@ section#postagem progress{
 }
 
 section#postagem img{
-    border-radius: 5px
+    width: 140px;
+    height: 140px;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 0 auto
 }
 
 section#postagem .containerpostagem{
@@ -33,7 +37,7 @@ section#postagem form{
     border-radius: 5px;
     background: #fff;
     width: 100%;
-    height: 465px;
+    height: 470px;
     max-width: 370px;
     padding: 20px;
     margin-top: 20px;
@@ -63,7 +67,7 @@ section#postagem form input[type = text]{
 }
 
 section#postagem input[type = file]{
-    margin-bottom: 20px
+    margin-bottom: 15px
 }
 
 section#postagem form button{

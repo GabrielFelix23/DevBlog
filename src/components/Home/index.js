@@ -19,7 +19,7 @@ class Home extends React.Component{
           descricao: childItem.val().descricao,
           image: childItem.val().image,
           titulo: childItem.val().titulo,
-          perfil: childItem.val().fotoPerfil
+          perfil: childItem.val().perfil
         })
         state.posts.reverse()
         this.setState(state)
