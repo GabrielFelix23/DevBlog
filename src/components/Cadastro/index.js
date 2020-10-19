@@ -41,7 +41,7 @@ class Cadastro extends React.Component{
               onChange={(e) => this.setState({nome: e.target.value})}/><br/>
 
             <label>Email: </label><br/>
-            <input type="text" placeholder="teste@teste.com" autoFocus required value={this.state.email}
+            <input type="email" placeholder="teste@teste.com" autoFocus required value={this.state.email}
               onChange={(e) => this.setState({email: e.target.value})}/><br/>
 
             <label>Senha: </label><br/>

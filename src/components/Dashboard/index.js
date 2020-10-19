@@ -49,6 +49,7 @@ class Dashboard extends React.Component{
     firebase.deslogar().then(() => {
       this.props.history.push('/')
       localStorage.removeItem('fotoPerfil')
+      window.location.reload()
     })
   }
 
@@ -60,7 +61,7 @@ class Dashboard extends React.Component{
             {this.state.semFoto !== '' ? 
               <p>{this.state.semFoto}</p>
               :
-              <img src={this.state.fotoPerfil} className="perfil"/>  
+              <img src={this.state.fotoPerfil} alt="Foto de perfil" className="perfil"/>  
             }
           </div>
           <p>Olá {this.state.nome}</p>

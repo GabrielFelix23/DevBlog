@@ -20,6 +20,7 @@ class Login extends React.Component{
 
       firebase.logar(email, senha)
       .then(() => {
+        window.location.reload()
         this.props.history.replace('/dashboard')
       })
       .catch((error) => {
@@ -43,7 +44,7 @@ class Login extends React.Component{
           <h2>{this.state.erro}</h2>
           <form onSubmit={this.login}>
             <label>Email: </label><br/>
-            <input type="text" placeholder="teste@teste.com" autoFocus value={this.state.email}
+            <input type="email" placeholder="teste@teste.com" autoFocus value={this.state.email}
               onChange={(e) => this.setState({email: e.target.value})}/><br/>
 
             <label>Senha: </label><br/>
