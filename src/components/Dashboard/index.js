@@ -4,6 +4,7 @@ import {Link, withRouter} from 'react-router-dom'
 
 import './dashboard.css'
 import foto from './fotos.png'
+import perfil from './perfil.png'
 
 class Dashboard extends React.Component{
   constructor(props){
@@ -11,6 +12,7 @@ class Dashboard extends React.Component{
     this.state = {
       nome: localStorage.nome,
       fotoPerfil: localStorage.fotoPerfil,
+      semFoto: ''
     }
     this.deslogar = this.deslogar.bind(this)
   }
@@ -37,7 +39,9 @@ class Dashboard extends React.Component{
       localStorage.fotoPerfil = foto.val().fotoPerfil
       this.setState({fotoPerfil: localStorage.fotoPerfil})
     }).catch((Erro) => {
-      console.log("Perfil sem foto!")
+        this.setState({
+          semFoto: <img src={perfil} alt="foto" className="semfoto"/>
+        })
     })
   }
 
@@ -53,10 +57,10 @@ class Dashboard extends React.Component{
       <section id="containerDeslogar">
         <div className="caixas">
           <div className="fotoPerfil">
-            {this.state.fotoPerfil === '' ?
-              <p>Ola</p>
+            {this.state.semFoto !== '' ? 
+              <p>{this.state.semFoto}</p>
               :
-              <img src={this.state.fotoPerfil} alt="Foto de perfil" className="perfil"/>
+              <img src={this.state.fotoPerfil} className="perfil"/>  
             }
           </div>
           <p>Olá {this.state.nome}</p>
