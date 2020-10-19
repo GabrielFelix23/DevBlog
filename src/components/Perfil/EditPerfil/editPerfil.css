@@ -17,8 +17,6 @@ article#containerEditPerfil .container h1{
 article#containerEditPerfil form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     border: 2px solid #FD8469;
     border-radius: 5px;
@@ -28,12 +26,11 @@ article#containerEditPerfil form{
 }
 
 article#containerEditPerfil  form img{
+    width: 100%;
+    height: 200px;
     border-radius: 5px;
     margin: 10px auto;
-    padding: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0 auto
 }
 
 article#containerEditPerfil form progress{

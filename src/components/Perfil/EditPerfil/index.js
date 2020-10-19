@@ -29,9 +29,7 @@ class EditPerfil extends React.Component{
             nome: nome,
         })
 
-        const uidAuth = firebase.auth.currentUser.uid
-
-        firebase.app.ref('fotoUser').child(uidAuth).set({
+        firebase.app.ref('fotoUser').child(uid).set({
             fotoPerfil: this.state.url
         }).then(() => {
             this.props.history.replace("/dashboard")

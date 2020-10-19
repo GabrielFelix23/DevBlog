@@ -17,6 +17,7 @@ class Cadastro extends React.Component{
   }
   
   cadastro = async (e) =>{
+    e.preventDefault()
     const {nome, email, senha} = this.state
     await firebase.cadastrar(nome, email, senha)
     .then(() => {
@@ -26,7 +27,7 @@ class Cadastro extends React.Component{
         erro: "Ocorreu um erro ao cadastrar o seu perfil.\nTente novamente mais tarde."
       })
     })
-    e.preventDefault()
+    
   }
 
   render() {
