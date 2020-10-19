@@ -6,24 +6,51 @@ article#containerEditPerfil{
 }
 
 article#containerEditPerfil .container{
+    margin-top: 20% 
+}
+
+article#containerEditPerfil .container h1{
+    font-size: 25px;
+    margin: 15px 0 
+}
+
+article#containerEditPerfil form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    border: 1px solid #FD8469;
+    border: 2px solid #FD8469;
     border-radius: 5px;
     background: #fff;
     width: 100%;
-    height: 340px;
-    margin-top: 70px 
+    padding: 30px;
 }
 
-article#containerEditPerfil .container form label{
+article#containerEditPerfil  form img{
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+article#containerEditPerfil form progress{
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+    padding: 0 auto;
+    display: flex;
+    align-content: center;
+    justify-content: center
+}
+
+article#containerEditPerfil form label{
     font-size: 18px;
 }
 
-article#containerEditPerfil .container  form input{
+article#containerEditPerfil  form input[type = text]{
     border: none;
     border: 1px solid #848484;
     border-radius: 5px;
@@ -33,14 +60,14 @@ article#containerEditPerfil .container  form input{
     margin: 5px 0 
 }
 
-article#containerEditPerfil .container form .containerButton{
+article#containerEditPerfil form .containerButton{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-article#containerEditPerfil .container form .containerButton button{
+article#containerEditPerfil form .containerButton button{
     border: none;
     background: #FD8469;
     color: #fff;
@@ -54,11 +81,11 @@ article#containerEditPerfil .container form .containerButton button{
     transition: 0.1s
 }
 
-article#containerEditPerfil .container form .containerButton button:hover{
+article#containerEditPerfil form .containerButton button:hover{
     background: #FF8000
 }
 
-article#containerEditPerfil .container form .containerButton .buttonVoltar{
+article#containerEditPerfil form .containerButton .buttonVoltar{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,6 +104,6 @@ article#containerEditPerfil .container form .containerButton .buttonVoltar{
     transition: 0.1s
 }
 
-article#containerEditPerfil .container form .containerButton .buttonVoltar:hover{
+article#containerEditPerfil form .containerButton .buttonVoltar:hover{
     background: #088A08
 }
