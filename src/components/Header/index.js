@@ -43,7 +43,11 @@ class Header extends React.Component{
           <h1>DevBlog</h1>
         </Link>
         {this.state.botaoEntrar === 'Sair' ? 
-          <Link onClick={this.deslogar} className="button" to={'/login'}><h3>{this.state.botaoEntrar}</h3></Link>
+          <div className="containerBotao">
+            <Link className="button dash" to={'/dashboard'}><h3>Dashboard</h3></Link>
+
+            <Link onClick={this.deslogar} className="button" to={'/login'}><h3>{this.state.botaoEntrar}</h3></Link>
+          </div>
           :
           <Link className="button" to={'/login'}><h3>{this.state.botaoEntrar}</h3></Link>
         }

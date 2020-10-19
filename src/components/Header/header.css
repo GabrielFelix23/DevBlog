@@ -26,6 +26,12 @@ header#header img{
     margin-right: 5px; 
 }
 
+header#header .containerBotao{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
 header#header .button{
     display: flex;
     align-items: center;
@@ -38,10 +44,21 @@ header#header .button{
     height: 40px;
     color: #fff;
     font-size: 15px;
-    transition: 0.1s
+    transition: 0.1s;
+    margin: 0 10px
 }
 
 header#header .button:hover{
     background: #fff;
     color: #FD8469
+}
+
+header#header .dash{
+    background: #fff;
+    color: #FD8469
+}
+
+header#header .dash:hover{
+    background: #FD8469;
+    color: #fff
 }

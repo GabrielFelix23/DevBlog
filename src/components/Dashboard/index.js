@@ -74,8 +74,9 @@ class Dashboard extends React.Component{
           <div className="foto">
             <img src={foto} alt="foto"/>
           </div>
-          <p>Postar +</p>
-          <Link to={'/postagens'}>Postar</Link>
+          <p>Suas atividades</p>
+          <Link to={'/'}>Feed de noticias</Link>
+          <Link to={'/postagens'}>Postar +</Link>
         </div>
       </section>
     )
