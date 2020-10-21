@@ -49,7 +49,9 @@ class Header extends React.Component{
             <Link onClick={this.deslogar} className="button" to={'/login'}><h3>{this.state.botaoEntrar}</h3></Link>
           </div>
           :
-          <Link className="button" to={'/login'}><h3>{this.state.botaoEntrar}</h3></Link>
+          <div className="containerButton">
+            <Link className="button" to={'/login'}><h3>{this.state.botaoEntrar}</h3></Link>
+          </div>
         }
       </header>
     );

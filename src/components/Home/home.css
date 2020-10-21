@@ -40,3 +40,12 @@ section#posts article img{
 section#posts .descricao{
     font-size: 18px
 }
+
+@media (max-width: 600px){
+    section#posts{
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+}
