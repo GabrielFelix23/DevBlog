@@ -105,3 +105,19 @@ section#containerDeslogar .fundoVerde button a{
     text-decoration: none;
     color: #000
 }
+
+@media (max-width: 600px){
+    section#containerDeslogar{
+        width: 100%;
+        height: 85vh;
+        max-width: 930px;
+        margin: 0 auto;
+        padding: 0 auto;
+        
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column
+    }
+}
