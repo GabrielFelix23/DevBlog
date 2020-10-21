@@ -20,7 +20,7 @@ section#postagem img{
     width: 100%;
     height: 200px;
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 0 auto
 }
 
@@ -101,4 +101,27 @@ section#postagem form .buttonCancelar{
 }
 section#postagem form .buttonCancelar:hover{
    background: #01A9DB
+}
+
+@media (max-width: 600px){
+    section#postagem{
+        width: 100%;
+        max-width: 295px;
+        margin: 0 auto;
+        padding: 0 auto
+    }
+    section#postagem .containerpostagem{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 80vh;
+    }
+    section#postagem img{
+        width: 100%;
+        height: 180px;
+        border-radius: 5px;
+        margin: 10px auto;
+        padding: 0 auto
+    }
 }
