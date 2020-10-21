@@ -58,3 +58,12 @@ article#containerPerfil .container img{
     height: 70px;
     margin-bottom: 30px
 }
+
+@media (max-width: 600px){
+    article#containerPerfil{
+        width: 100%;
+        max-width: 270px;
+        margin: 0 auto;
+        padding: 0 auto
+    }
+}
