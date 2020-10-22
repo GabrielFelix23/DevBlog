@@ -18,7 +18,6 @@ class Home extends React.Component{
           autor: childItem.val().autor,
           descricao: childItem.val().descricao,
           image: childItem.val().image,
-          titulo: childItem.val().titulo,
           perfil: childItem.val().perfil
         })
         state.posts.reverse()
@@ -38,8 +37,7 @@ class Home extends React.Component{
                   <p className="titulo">{posts.autor}</p>
                 </div>
                 <img src={posts.image} alt="Capa do post"/>
-                <p>Titulo: {posts.titulo}</p>
-                <p className="descricao">Comentário: {posts.descricao}</p>
+                <p className="descricao"><small>{posts.autor}</small> {posts.descricao}</p>
             </article>  
           )
         })}

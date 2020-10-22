@@ -9,7 +9,6 @@ class Postagens extends React.Component{
     super(props)
     this.state = {
       imagem: null,
-      titulo: '',
       comentario: '',
       erro: '',
       url: '',
@@ -34,7 +33,6 @@ class Postagens extends React.Component{
     let chave = post.push().key
 
     post.child(chave).set({
-      titulo: this.state.titulo,
       autor: localStorage.nome,
       descricao: this.state.comentario,
       image: this.state.url,
@@ -106,11 +104,7 @@ class Postagens extends React.Component{
               <progress value={this.state.progress} max="100"/>
             }
             
-            <label>Titulo: </label><br/>
-            <input type="text" placeholder="Está imagem é..." autoFocus value={this.state.titulo}
-              onChange={(e) => this.setState({titulo: e.target.value})} required/><br/>
-            
-            <label>Comentário: </label><br/>
+            <label>Legenda: </label><br/>
             <input type="text" placeholder="Está imagem é..." autoFocus value={this.state.comentario}
               onChange={(e) => this.setState({comentario: e.target.value})} required/><br/>
 

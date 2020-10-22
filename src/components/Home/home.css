@@ -37,6 +37,16 @@ section#posts article img{
     border-radius: 5px
 }
 
+section#posts article small{
+    font-size: 20px;
+    font-weight: bold
+}
+
+section#posts article p{
+    font-size: 20px;
+    margin-bottom: 5px
+}
+
 section#posts .descricao{
     font-size: 18px
 }
