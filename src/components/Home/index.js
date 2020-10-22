@@ -37,8 +37,8 @@ class Home extends React.Component{
                   <img className="fotoDePerfil" src={posts.perfil}/>
                   <p className="titulo">{posts.autor}</p>
                 </div>
-                <p>Titulo: {posts.titulo}</p>
                 <img src={posts.image} alt="Capa do post"/>
+                <p>Titulo: {posts.titulo}</p>
                 <p className="descricao">Comentário: {posts.descricao}</p>
             </article>  
           )
