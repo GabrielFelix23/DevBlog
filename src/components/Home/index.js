@@ -38,6 +38,11 @@ class Home extends React.Component{
                 </div>
                 <img src={posts.image} alt="Capa do post"/>
                 <p className="descricao"><small>{posts.autor}</small> {posts.descricao}</p>
+
+                <form onSubmit={this.publicar}>
+                  <input type="text" placeholder="Adicione um comentário..."/>
+                  <button type="submit">Publicar</button>
+                </form>
             </article>  
           )
         })}

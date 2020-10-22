@@ -50,3 +50,28 @@ section#posts article p{
 section#posts .descricao{
     font-size: 18px
 }
+
+section#posts article form {
+    display: flex;
+    align-items: center;
+    flex-direction: row
+}
+
+section#posts article form input{
+    border: 1px solid #A4A4A4;
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 0 10px
+}
+
+section#posts article form button{
+    border: none;
+    border-radius: 5px;
+    color: #00BFFF;
+    background: #fff;
+    font-size: 18px;
+    margin: 0 auto
+}
