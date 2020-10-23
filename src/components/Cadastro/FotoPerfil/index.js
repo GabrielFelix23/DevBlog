@@ -26,6 +26,7 @@ class FotoDePerfil extends React.Component{
         }).then(() => {
             this.props.history.replace("/dashboard")
         })
+        
     }
 
     fotoUser = async (e) => { 

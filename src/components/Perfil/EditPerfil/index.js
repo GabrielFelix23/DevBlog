@@ -89,7 +89,7 @@ class EditPerfil extends React.Component{
                     <h1>Foto de perfil: </h1>
 
                     <form onSubmit={this.editar}>
-                        <input type="file" onChange={this.fotoUser} required/>
+                        <input type="file" onChange={this.fotoUser}/>
                         {this.state.url !== '' ? 
                             <img src={this.state.url} alt="Foto de perfil" width="150" height="150"/>
                             :

@@ -9,7 +9,7 @@ class Comentarios extends React.Component{
             key: '',
             nome: '',
             imagem: '',
-            perfil: '',
+            perfil: localStorage.fotoPerfil,
             descricao: '',
             comentar: '',
             listarComentarios: []
@@ -36,13 +36,26 @@ class Comentarios extends React.Component{
     async comentar(e){
         e.preventDefault()
 
-        const { id } = this.props.match.params
-        const user = firebase.app.ref('posts').child(id).child("comentario")
-        const chave = user.push().key
+        if(!firebase.logado()){
+            this.props.history.replace('/login')
+        }
+        else{
+            const { id } = this.props.match.params
+            const user = firebase.app.ref('posts').child(id).child("comentario")
+            const chave = user.push().key
+    
+            await user.child(chave).set({
+                comentario: this.state.comentar,
+                nome: localStorage.nome,
+                perfil: localStorage.fotoPerfil,
+            }).then(() => {
+                this.setState({
+                    comentar: ''
+                })
+            })
+        }
 
-        await user.child(chave).set({
-            comentario: this.state.comentar
-        })
+        
     }
 
     async listarComentarios(){
@@ -54,8 +67,8 @@ class Comentarios extends React.Component{
             snapshot.forEach((childItem) => {
               state.listarComentarios.push({
                 key: childItem.key,
-                perfil: localStorage.fotoPerfil,
-                autor: localStorage.nome,
+                perfil: childItem.val().perfil,
+                autor: childItem.val().nome,
                 comentario: childItem.val().comentario
               })
               this.setState(state)
@@ -78,7 +91,7 @@ class Comentarios extends React.Component{
                     <p className="descricao"><small>{this.state.nome}</small> {this.state.descricao}</p>
 
                     {this.state.listarComentarios.map((lista) => {
-                        return(
+                        return (
                             <article key={lista.key}>
                                 <div className="containerComentarios">
                                     <div className="containerNomePerfil">
