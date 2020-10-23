@@ -39,7 +39,7 @@ class Home extends React.Component{
                 </div>
                 <img src={posts.image} alt="Capa do post"/>
                 <p className="descricao"><small>{posts.autor}</small> {posts.descricao}</p>
-                <Link to={`/comentarios/${posts.key}`}>Comentar</Link>
+                <Link className="buttonMaisSobre" to={`/comentarios/${posts.key}`}>Mais sobre</Link>
             </article>  
           )
         })}

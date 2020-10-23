@@ -60,7 +60,7 @@ class Comentarios extends React.Component{
               })
               this.setState(state)
             })
-          })
+        })
     }
 
     render() {
