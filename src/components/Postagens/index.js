@@ -36,7 +36,7 @@ class Postagens extends React.Component{
       autor: localStorage.nome,
       descricao: this.state.comentario,
       image: this.state.url,
-      perfil: localStorage.fotoPerfil
+      perfil: localStorage.fotoPerfil,
     })
     .then(() => {
       this.props.history.replace('/')

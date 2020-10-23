@@ -11,23 +11,38 @@ section#posts article{
     margin: 30px 0;
 }
 
-section#posts article .containerPerfil{
-    width: 100%;
-    max-width: 60px;
+section#posts .containerNomePerfil{
     display: flex;
+    align-items: center;
     flex-direction: row;
-    align-items: center
 }
 
-section#posts article .containerPerfil .fotoDePerfil{
+section#posts .containerNomePerfil p {
     width: 100%;
+}
+section#posts .containerNomePerfil .fotoPerfil{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-right: 10px
+}
+
+section#posts article .fotoDePerfil{
+    width: 60px;
     height: 60px;
     border-radius: 50px;
+    margin-right: 10px
 }
 
-section#posts .containerPerfil .titulo{
-    margin-left: 15px;
-    font-size: 20px;
+section#posts .containerButtonVoltar a{
+    text-decoration: none;
+    border: 2px solid #fd8469;
+    border-radius: 5px;
+    background: none;
+    color: #fd8469;
+    padding: 10px;
+    height: 30px;
+    font-size: 18px
 }
 
 section#posts article img{
@@ -51,27 +66,31 @@ section#posts .descricao{
     font-size: 18px
 }
 
-section#posts article form {
+section#posts form{
     display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: row
+    margin-top: 50px
 }
 
-section#posts article form input{
-    border: 1px solid #A4A4A4;
-    border-radius: 5px;
+section#posts form input{
     width: 80%;
     height: 30px;
+    border: 1px solid #A4A4A4;
+    border-radius: 5px;
+    padding: 0 10px;
     font-size: 16px;
-    margin: 10px 0;
-    padding: 0 10px
 }
 
-section#posts article form button{
+section#posts form button{
     border: none;
-    border-radius: 5px;
-    color: #00BFFF;
-    background: #fff;
-    font-size: 18px;
-    margin: 0 auto
+    background: none;
+    color: #2ECCFA;
+    margin: 0 auto;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+section#posts .containerComentarios{
+    margin-bottom: -80px ; 
 }

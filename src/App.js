@@ -4,6 +4,7 @@ import firebase from './firebase'
 
 import Header from './components/Header'
 import Home from './components/Home'
+import Comentarios from './components/Home/Comentarios'
 import Login from './components/Login'
 import Cadastro from './components/Cadastro'
 import FotoPerfil from './components/Cadastro/FotoPerfil'
@@ -36,6 +37,7 @@ class App extends React.Component{
       <Header/>
         <Switch>
           <Route exact path="/" component={Home}/>
+          <Route exact path="/comentarios/:id" component={Comentarios}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/cadastro" component={Cadastro}/>
           <Route exact path="/fotoPerfil" component={FotoPerfil}/>

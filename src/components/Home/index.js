@@ -1,5 +1,6 @@
 import React from 'react'
 import firebase from '../../firebase'
+import {Link} from 'react-router-dom'
 import './home.css'
 
 class Home extends React.Component{
@@ -32,17 +33,13 @@ class Home extends React.Component{
         {this.state.posts.map((posts) => {
           return(   
             <article key={posts.key}>
-                <div className="containerPerfil">
+                <div className="containerNomePerfil">
                   <img className="fotoDePerfil" src={posts.perfil}/>
                   <p className="titulo">{posts.autor}</p>
                 </div>
                 <img src={posts.image} alt="Capa do post"/>
                 <p className="descricao"><small>{posts.autor}</small> {posts.descricao}</p>
-
-                <form onSubmit={this.publicar}>
-                  <input type="text" placeholder="Adicione um comentário..."/>
-                  <button type="submit">Publicar</button>
-                </form>
+                <Link to={`/comentarios/${posts.key}`}>Comentar</Link>
             </article>  
           )
         })}
