@@ -38,11 +38,12 @@ class Dashboard extends React.Component{
     await firebase.fotoPerfil((foto) => {
       localStorage.fotoPerfil = foto.val().fotoPerfil
       this.setState({fotoPerfil: localStorage.fotoPerfil})
-    }).catch((Erro) => {
-        this.setState({
-          semFoto: <img src={perfil} alt="foto" className="semfoto"/>
-        })
     })
+    if(!localStorage.fotoPerfil){
+      this.setState({
+        semFoto: <img src={perfil} alt="foto" className="semfoto"/>
+      })
+    }   
   }
 
   deslogar(){

@@ -21,7 +21,7 @@ class Postagens extends React.Component{
 
   componentDidMount(){
     if(!firebase.logado()){
-      this.props.history.replace('login')
+      this.props.history.replace('/login')
       return null
     }
   }
