@@ -42,6 +42,7 @@ class Login extends React.Component{
     return (
      <section id="login">
        <div className="containerLogin">
+          <h1>Login</h1>
           <h2>{this.state.erro}</h2>
           <form onSubmit={this.login}>
             <label>Email: </label><br/>

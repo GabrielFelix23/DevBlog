@@ -13,7 +13,11 @@ section#login .containerLogin{
     height: 70vh;
 }
 
-section#login form{
+section#login .containerLogin h1 {
+    font-size: 30px;
+}
+
+section#login .containerLogin form{
     border: 2px solid #fd8469;
     border-radius: 5px;
     background: #fff;
@@ -28,13 +32,13 @@ section#login form{
     flex-direction: column
 } 
 
-section#login form label{
+section#login .containerLogin form label{
     margin-top: 15px;
     margin-bottom: 5px;
     font-size: 17px
 }
 
-section#login form input{
+section#login .containerLogin form input{
     border: none;
     border: 1px solid #6E6E6E;
     border-radius: 5px;
@@ -43,7 +47,7 @@ section#login form input{
     padding: 0 10px;
 }
 
-section#login form button{
+section#login .containerLogin form button{
     border: none;
     margin-top: 20px;
     border-radius: 5px;
@@ -55,11 +59,11 @@ section#login form button{
     margin-bottom: 20px;
     transition: 0.1s
 }
-section#login form button:hover{
+section#login .containerLogin form button:hover{
     background: #f76b4f
 }
 
-section#login footer{
+section#login .containerLogin footer{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,12 +71,12 @@ section#login footer{
     font-size: 16px
 }
 
-section#login footer a{
+section#login .containerLogin footer a{
     text-decoration: none;
     color: #fd8469;
     font-weight: bold
 }
 
-section#login footer a:hover{
+section#login .containerLogin footer a:hover{
     color: #f76b4f
 }

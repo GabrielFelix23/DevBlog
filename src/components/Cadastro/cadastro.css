@@ -13,6 +13,10 @@ section#cadastro .containerCadastro{
     height: 70vh;
 }
 
+section#cadastro .containerCadastro{
+    font-size: 20px
+}
+
 section#cadastro form{
     border: 2px solid #fd8469;
     border-radius: 5px;

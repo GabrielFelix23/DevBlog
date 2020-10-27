@@ -34,6 +34,7 @@ class Cadastro extends React.Component{
     return (
      <section id="cadastro">
        <div className="containerCadastro">
+          <h1>Cadastre-se</h1>
           <h2>{this.state.erro}</h2>
 
           <form onSubmit={this.cadastro}>
@@ -42,8 +43,8 @@ class Cadastro extends React.Component{
               onChange={(e) => this.setState({nome: e.target.value})}/><br/>
 
             <label>Email: </label><br/>
-            <input type="email" placeholder="teste@teste.com" autoFocus required value={this.state.email}
-              onChange={(e) => this.setState({email: e.target.value})}/><br/>
+            <input type="email" placeholder="teste@teste.com" autoFocus required 
+              value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
 
             <label>Senha: </label><br/>
             <input type="password" placeholder="****" autoFocus required value={this.state.senha}
