@@ -19,15 +19,17 @@ class Cadastro extends React.Component{
   cadastro = async (e) =>{
     e.preventDefault()
     const {nome, email, senha} = this.state
+
+    if(senha.length < 4){
+      this.setState({
+        erro: "Senha muito pequena!"
+      })
+    }
+
     await firebase.cadastrar(nome, email, senha)
     .then(() => {
       this.props.history.replace('/fotoPerfil')
-    }).catch((error) => {
-      this.setState({
-        erro: "Ocorreu um erro ao cadastrar o seu perfil.\nTente novamente mais tarde."
-      })
     })
-    
   }
 
   render() {
