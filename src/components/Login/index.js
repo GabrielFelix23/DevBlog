@@ -45,18 +45,19 @@ class Login extends React.Component{
           <h1>Login</h1>
           <h2>{this.state.erro}</h2>
           <form onSubmit={this.login}>
+
             <label>Email: </label><br/>
             <div className="containerInput">
               <input type="email" placeholder="teste@teste.com" autoFocus required 
               value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
-              <i class="glyphicon glyphicon-user"></i>
+              <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
             </div>
 
             <label>Senha: </label><br/>
             <div className="containerInput">
               <input type="password" placeholder="****" required autoFocus value={this.state.senha}
                 onChange={(e) => this.setState({senha: e.target.value})}/><br/>
-                <i class="glyphicon glyphicon-lock"></i>
+                <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
             </div>
             
             <button type="submit">Entrar</button>

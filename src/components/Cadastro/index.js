@@ -40,17 +40,27 @@ class Cadastro extends React.Component{
           <h2>{this.state.erro}</h2>
 
           <form onSubmit={this.cadastro}>
-            <label>Nome: </label><br/>
-            <input type="text" placeholder="Seu nome: " autoFocus required value={this.state.nome}
-              onChange={(e) => this.setState({nome: e.target.value})}/><br/>
 
+            <label>Nome: </label><br/>
+            <div className="containerInputs">
+              <input type="text" placeholder="Seu nome: " autoFocus required value={this.state.nome}
+                onChange={(e) => this.setState({nome: e.target.value})}/><br/>
+                <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
+            
             <label>Email: </label><br/>
-            <input type="email" placeholder="teste@teste.com" autoFocus required 
-              value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
+            <div className="containerInputs">
+              <input type="email" placeholder="teste@teste.com" autoFocus required 
+                value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
+                <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
 
             <label>Senha: </label><br/>
-            <input type="password" placeholder="****" autoFocus required value={this.state.senha}
-              onChange={(e) => this.setState({senha: e.target.value})}/><br/>
+            <div className="containerInputs">
+              <input type="password" placeholder="****" autoFocus required value={this.state.senha}
+                onChange={(e) => this.setState({senha: e.target.value})}/><br/>
+                <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
 
             <button type="submit">Cadastrar</button>
             <Link to={'/login'} className="buttonCancelar">Cancelar</Link>

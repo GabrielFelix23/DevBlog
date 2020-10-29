@@ -25,7 +25,7 @@ section#cadastro form{
     height: 380px;
     max-width: 350px;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 5px;
     
     display: flex;
     justify-content: center;
@@ -42,13 +42,32 @@ section#cadastro form label{
     font-size: 17px
 }
 
-section#cadastro form input{
+section#cadastro form .containerInputs{
+    position: relative
+}
+
+section#cadastro form .containerInputs input{
     border: none;
     border: 1px solid #6E6E6E;
     border-radius: 5px;
     height: 30px;
-    font-size: 15px;
+    font-size: 16px;
+    padding: 0 50px;
+    width: 100%;
+    transition: 0.1s
+}
+
+section#cadastro form .containerInputs input:focus {
+    border-color: #f76b4f;
+    box-shadow: 0px 0px 8px 0px #f76b4f
+}
+
+section#cadastro form .containerInputs i{
+    position: absolute;
     padding: 0 10px;
+    top: 7px;
+    color: #6E6E6E;
+    font-size: 17px;
 }
 
 section#cadastro form button{
