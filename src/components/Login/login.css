@@ -37,14 +37,32 @@ section#login .containerLogin form label{
     margin-bottom: 5px;
     font-size: 17px
 }
+section#login .containerLogin form .containerInput{
+    position: relative
+}
 
 section#login .containerLogin form input{
     border: none;
     border: 1px solid #6E6E6E;
     border-radius: 5px;
     height: 30px;
-    font-size: 15px;
+    font-size: 16px;
+    padding: 0 50px;
+    width: 100%;
+    transition: 0.1s
+}
+
+section#login .containerLogin form input:focus {
+    border-color: #f76b4f;
+    box-shadow: 0px 0px 8px 0px #f76b4f
+}
+
+section#login .containerLogin form i{
+    position: absolute;
     padding: 0 10px;
+    top: 7px;
+    color: #6E6E6E;
+    font-size: 17px;
 }
 
 section#login .containerLogin form button{

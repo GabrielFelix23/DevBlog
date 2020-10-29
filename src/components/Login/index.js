@@ -46,13 +46,19 @@ class Login extends React.Component{
           <h2>{this.state.erro}</h2>
           <form onSubmit={this.login}>
             <label>Email: </label><br/>
-            <input type="email" placeholder="teste@teste.com" autoFocus required 
-            value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
+            <div className="containerInput">
+              <input type="email" placeholder="teste@teste.com" autoFocus required 
+              value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}/><br/>
+              <i class="glyphicon glyphicon-user"></i>
+            </div>
 
             <label>Senha: </label><br/>
-            <input type="password" placeholder="****" required autoFocus value={this.state.senha}
-              onChange={(e) => this.setState({senha: e.target.value})}/><br/>
-
+            <div className="containerInput">
+              <input type="password" placeholder="****" required autoFocus value={this.state.senha}
+                onChange={(e) => this.setState({senha: e.target.value})}/><br/>
+                <i class="glyphicon glyphicon-lock"></i>
+            </div>
+            
             <button type="submit">Entrar</button>
 
             <footer>
