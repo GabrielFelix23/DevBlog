@@ -54,7 +54,8 @@ article#containerEditPerfil  form input[type = text]{
     width: 250px;
     height: 30px;
     padding: 0 10px;
-    margin: 5px 0 
+    margin: 5px 0;
+    font-size: 15px
 }
 
 article#containerEditPerfil form .containerButton{
