@@ -10,7 +10,7 @@ section#cadastro .containerCadastro{
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 70vh;
+    height: 80vh;
 }
 
 section#cadastro .containerCadastro{
@@ -22,10 +22,10 @@ section#cadastro form{
     border-radius: 5px;
     background: #fff;
     width: 100%;
-    height: 380px;
+    height: auto;
     max-width: 350px;
     padding: 20px;
-    margin-top: 5px;
+    margin-top: 15px;
     
     display: flex;
     justify-content: center;
@@ -38,7 +38,6 @@ section#cadastro h2{
 
 section#cadastro form label{
     margin-top: 15px;
-    margin-bottom: 5px;
     font-size: 17px
 }
 
@@ -52,7 +51,7 @@ section#cadastro form .containerInputs input{
     border-radius: 5px;
     height: 30px;
     font-size: 16px;
-    padding: 0 50px;
+    padding: 0 40px;
     width: 100%;
     transition: 0.1s
 }
@@ -65,7 +64,7 @@ section#cadastro form .containerInputs input:focus {
 section#cadastro form .containerInputs i{
     position: absolute;
     padding: 0 10px;
-    top: 7px;
+    top: 9px;
     color: #6E6E6E;
     font-size: 17px;
 }
@@ -79,7 +78,6 @@ section#cadastro form button{
     font-size: 20px;
     padding: 5px;
     cursor: pointer;
-    margin-bottom: 0px;
     transition: 0.1s
 }
 section#cadastro form button:hover{
@@ -93,7 +91,6 @@ section#cadastro form a{
     background: #2ECCFA;
     padding: 5px;
     cursor: pointer;
-    margin-bottom: 0px;
     transition: 0.1s;
     text-decoration: none;
     color: #fff;
