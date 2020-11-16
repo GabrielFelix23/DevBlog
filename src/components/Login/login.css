@@ -17,6 +17,11 @@ section#login .containerLogin h1 {
     font-size: 30px;
 }
 
+section#login .containerLogin h2 {
+    margin-top: 10px;
+    color: #FF0000;
+}
+
 section#login .containerLogin form{
     border: 2px solid #fd8469;
     border-radius: 5px;

@@ -26,9 +26,9 @@ class Login extends React.Component{
         this.props.history.replace('/dashboard')
       })
       .catch((error) => {
-          this.setState({
-            erro: "Email ou senha incorreta."
-          })
+        this.setState({
+          erro: "Login incorreto!"
+        })    
       })
   }
 
