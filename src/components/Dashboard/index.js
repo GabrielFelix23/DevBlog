@@ -14,6 +14,7 @@ class Dashboard extends React.Component{
       fotoPerfil: localStorage.fotoPerfil,
       semFoto: ''
     }
+    this.foto = this.foto.bind(this)
     this.deslogar = this.deslogar.bind(this)
   }
 
@@ -30,15 +31,12 @@ class Dashboard extends React.Component{
     this.foto()
   }
  
-  foto = async () => {
-    if(!firebase.logado()){
-      this.props.history.replace("/login")
-      return null
-    }
+  async foto(){
     await firebase.fotoPerfil((foto) => {
       localStorage.fotoPerfil = foto.val().fotoPerfil
       this.setState({fotoPerfil: localStorage.fotoPerfil})
     })
+
     if(!localStorage.fotoPerfil){
       this.setState({
         semFoto: <img src={perfil} alt="foto" className="semfoto"/>

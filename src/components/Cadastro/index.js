@@ -21,12 +21,6 @@ class Cadastro extends React.Component{
     e.preventDefault()
     const {nome, email, senha, confirmarSenha} = this.state
 
-    if(senha.length < 4){
-      this.setState({
-        erro: "Senha muito pequena!"
-      })
-    }
-
     await firebase.cadastrar(nome, email, senha)
     .then(() => {
       this.props.history.replace('/fotoPerfil')

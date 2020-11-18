@@ -22,7 +22,7 @@ class Login extends React.Component{
 
       await firebase.logar(email, senha)
       .then(() => {
-        window.location.reload()
+       
         this.props.history.replace('/dashboard')
       })
       .catch((error) => {

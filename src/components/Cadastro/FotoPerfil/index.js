@@ -25,8 +25,6 @@ class FotoDePerfil extends React.Component{
             fotoPerfil: this.state.url
         }).then(() => {
             this.props.history.replace("/dashboard")
-            window.location.reload()
-
         })
         
     }
