@@ -69,6 +69,9 @@ class FotoDePerfil extends React.Component{
     }
 
     async componentDidMount(){
+        if(!localStorage.fotoPerfil){
+            await this.props.history.replace("/fotoPerfil")
+        }
         if(!firebase.logado()){
             await this.props.history.replace('/cadastro')
             return null
@@ -90,7 +93,6 @@ class FotoDePerfil extends React.Component{
                         
                         <div className="containerButton">
                             <button type="submit">Pronto</button>
-                            <Link to={'/dashboard'} className="buttonVoltar">Não agora</Link>
                         </div>
                     </form>
                 </div>
