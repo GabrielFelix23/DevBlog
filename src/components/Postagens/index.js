@@ -24,6 +24,10 @@ class Postagens extends React.Component{
       this.props.history.replace('/login')
       return null
     }
+    if(!localStorage.fotoPerfil){
+      this.props.history.push('/fotoPerfil')  
+      alert("Você precisa de uma foto de identificação para fazer uma postagem!")  
+    }
   }
 
   postar = async (e) => {

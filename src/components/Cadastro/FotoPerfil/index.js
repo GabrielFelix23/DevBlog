@@ -97,6 +97,7 @@ class FotoDePerfil extends React.Component{
                         
                         <div className="containerButton">
                             <button type="submit">Pronto</button>
+                            <Link to="/dashboard">Agora não!</Link>
                         </div>
                     </form>
                 </div>

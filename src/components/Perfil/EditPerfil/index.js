@@ -45,7 +45,12 @@ class EditPerfil extends React.Component{
 
                     <form onSubmit={this.editar}>  
                         <div className="containerFotoPerfil">
-                            <img src={semFoto} className="semFoto" alt="foto de perfil"/>
+                            {!localStorage.fotoPerfil ?
+                                <img src={semFoto} className="semFoto" alt="foto de perfil"/>
+                                :
+                                <img src={localStorage.fotoPerfil} className="semFoto" alt="foto de perfil"/>
+                            }
+                            
                             <Link to={'/fotoPerfil'} className="buttonFotoPerfil">Foto de Perfil</Link>
                         </div>          
                         <label>Nome: </label>

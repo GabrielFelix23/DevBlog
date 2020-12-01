@@ -44,7 +44,7 @@ class Home extends React.Component{
           )
         })}
       </section>
-    );
+    )
   }
 }
 

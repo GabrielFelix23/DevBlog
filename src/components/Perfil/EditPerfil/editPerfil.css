@@ -34,6 +34,7 @@ article#containerEditPerfil form .containerFotoPerfil{
 article#containerEditPerfil  form .containerFotoPerfil .semFoto{
     width: 60px;
     height: 60px;
+    border-radius: 50px
 }
 
 article#containerEditPerfil  form .containerFotoPerfil .buttonFotoPerfil{

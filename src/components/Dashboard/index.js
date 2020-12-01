@@ -12,6 +12,7 @@ class Dashboard extends React.Component{
     this.state = {
       nome: localStorage.nome,
       fotoPerfil: localStorage.fotoPerfil,
+      semFoto: ''
     }
     this.foto = this.foto.bind(this)
     this.deslogar = this.deslogar.bind(this)
@@ -35,7 +36,9 @@ class Dashboard extends React.Component{
       localStorage.fotoPerfil = foto.val().fotoPerfil
       this.setState({fotoPerfil: localStorage.fotoPerfil})
     }).catch((erro) => {
-        this.props.history.push('/fotoPerfil')
+        this.setState({
+          semFoto: <img src={perfil} alt="Sem foto"/>
+        })
     })
   }
 
@@ -53,7 +56,7 @@ class Dashboard extends React.Component{
         <div className="caixas">
           <div className="fotoPerfil">
             {!localStorage.fotoPerfil ?
-              <img src={perfil} alt="Sem foto"/>
+              <p>{this.state.semFoto}</p>
               :
               <img src={this.state.fotoPerfil} alt="Foto de perfil" className="perfil"/>  
 
