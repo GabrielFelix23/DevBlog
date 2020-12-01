@@ -78,3 +78,26 @@ article#containerfotoPerfil .container form .containerButton button{
 article#containerfotoPerfil .container form .containerButton button:hover{
     background: #FF8000
 }
+
+article#containerfotoPerfil .container form .containerButton .btnVoltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: #04B404;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.1s
+}
+
+article#containerfotoPerfil .container form .containerButton .btnVoltar:hover{
+    background: #04B431
+}
