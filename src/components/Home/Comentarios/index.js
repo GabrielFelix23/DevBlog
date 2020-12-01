@@ -16,6 +16,7 @@ class Comentarios extends React.Component{
         }
         this.comentar = this.comentar.bind(this)
         this.listarComentarios = this.listarComentarios.bind(this)
+        this.comentarErro = this.comentarErro.bind(this)
     }
     
     async componentDidMount(){
@@ -53,9 +54,12 @@ class Comentarios extends React.Component{
                     comentar: ''
                 })
             })
-        }
+        }        
+    }
 
-        
+    async comentarErro(){
+        alert("Você precisa de uma foto de identificação para fazer comentários!")          
+        this.props.history.replace("/fotoPerfil")
     }
 
     async listarComentarios(){
@@ -103,13 +107,20 @@ class Comentarios extends React.Component{
                             </article>
                         )
                     })}        
+                    {!localStorage.fotoPerfil ?
+                        <form onSubmit={this.comentarErro}>
+                            <input type="text" placeholder="Adicionar comentário..."/>
+                            <button type="submit">Comentar</button>
+                        </form>
+                        :
+                        <form onSubmit={this.comentar}>
+                            <input type="text" placeholder="Adicionar comentário..."
+                                value={this.state.comentar} onChange={(e) => this.setState({comentar: e.target.value})}/>
+                            <button type="submit">Comentar</button>
+                        </form>
+                }
 
-
-                    <form onSubmit={this.comentar}>
-                        <input type="text" placeholder="Adicionar comentário..."
-                            value={this.state.comentar} onChange={(e) => this.setState({comentar: e.target.value})}/>
-                        <button type="submit">Comentar</button>
-                    </form>
+                    
                 </article>
             </section>
         )
