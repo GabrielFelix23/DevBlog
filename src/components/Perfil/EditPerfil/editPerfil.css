@@ -25,30 +25,47 @@ article#containerEditPerfil form{
     padding: 30px;
 }
 
-article#containerEditPerfil  form img{
-    width: 100%;
-    height: 200px;
-    border-radius: 5px;
-    margin: 10px auto;
-    padding: 0 auto
+article#containerEditPerfil form .containerFotoPerfil{
+    display: flex;
+    align-items: center;
+    flex-direction: row
 }
 
-article#containerEditPerfil form progress{
-    width: 100%;
-    height: 30px;
-    max-width: 250px;
-    margin: 5px auto;
-    padding: 0 auto;
+article#containerEditPerfil  form .containerFotoPerfil .semFoto{
+    width: 60px;
+    height: 60px;
+}
+
+article#containerEditPerfil  form .containerFotoPerfil .buttonFotoPerfil{
     display: flex;
-    align-content: center;
-    justify-content: center
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: #04B4AE;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: 0.1s
+}
+
+article#containerEditPerfil  form .containerFotoPerfil .buttonFotoPerfil:hover{
+    background: #00BFFF 
 }
 
 article#containerEditPerfil form label{
     font-size: 18px;
+    margin-top: 30px
 }
 
-article#containerEditPerfil  form input[type = text]{
+article#containerEditPerfil form input[type = text]{
     border: none;
     border: 1px solid #848484;
     border-radius: 5px;
