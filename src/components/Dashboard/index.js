@@ -37,7 +37,7 @@ class Dashboard extends React.Component{
       this.setState({fotoPerfil: localStorage.fotoPerfil})
     }).catch((erro) => {
         this.setState({
-          semFoto: <img src={perfil} alt="Sem foto"/>
+          semFoto: <img src={perfil} className="semFoto" alt="Sem foto"/>
         })
     })
   }
