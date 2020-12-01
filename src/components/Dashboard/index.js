@@ -34,6 +34,8 @@ class Dashboard extends React.Component{
     await firebase.fotoPerfil((foto) => {
       localStorage.fotoPerfil = foto.val().fotoPerfil
       this.setState({fotoPerfil: localStorage.fotoPerfil})
+    }).catch((erro) => {
+        this.props.history.push('/fotoPerfil')
     })
   }
 
