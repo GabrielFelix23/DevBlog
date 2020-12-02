@@ -26,6 +26,11 @@ class Cadastro extends React.Component{
       this.props.history.replace('/fotoPerfil')
     })
     .catch((error) => {
+      if(email){
+        this.setState({
+          erro: "E-mail já cadastrado no nosso banco de dados!"
+        })
+      }
       if(confirmarSenha != senha){
         this.setState({
           erro: "As senhas não estão iguais!"
