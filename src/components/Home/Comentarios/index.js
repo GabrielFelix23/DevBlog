@@ -38,8 +38,8 @@ class Comentarios extends React.Component{
         e.preventDefault()
 
         if(!firebase.logado()){
+            alert("Para fazer comentários é preciso estar logado!")
             this.props.history.replace('/login')
-
         }
         else if(firebase.logado && !localStorage.fotoPerfil){
             alert("Para comentar é preciso ter uma foto de identificação!")
