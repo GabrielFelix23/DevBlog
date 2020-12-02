@@ -36,6 +36,7 @@ article#containerfotoPerfil .container form img{
 
 article#containerfotoPerfil .container form progress{
     width: 100%;
+    height: 30px;
     max-width: 250px;
     margin: 10px auto;
     padding: 0 auto;
