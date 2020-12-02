@@ -28,12 +28,25 @@ class Cadastro extends React.Component{
     .catch((error) => {
       if(email){
         this.setState({
-          erro: "E-mail já cadastrado no nosso banco de dados!"
+          erro: <div className="containerErro">
+                    <h2>E-mail já cadastrado no nosso banco de dados!</h2>
+                </div>
         })
       }
+      
+      if(senha.length < 4){
+        this.setState({
+          erro: <div className="containerErro">
+                    <h2>Senha muito pequena!</h2>
+                </div>
+        })
+      }
+
       if(confirmarSenha != senha){
         this.setState({
-          erro: "As senhas não estão iguais!"
+          erro: <div className="containerErro">
+                    <h2>As senhas não estão iguais!</h2>
+                </div>
         })
       }
     })
@@ -43,8 +56,10 @@ class Cadastro extends React.Component{
     return (
      <section id="cadastro">
        <div className="containerCadastro">
-          <h1>Cadastre-se</h1>
-          <h2>{this.state.erro}</h2>
+          
+          {this.state.erro}
+          
+          <h1>Cadastre-se</h1>          
 
           <form onSubmit={this.cadastro}>
 
