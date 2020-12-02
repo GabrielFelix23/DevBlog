@@ -39,6 +39,11 @@ class Comentarios extends React.Component{
 
         if(!firebase.logado()){
             this.props.history.replace('/login')
+
+        }
+        else if(firebase.logado && !localStorage.fotoPerfil){
+            alert("Para comentar é preciso ter uma foto de identificação!")
+            this.props.history.replace("/fotoPerfil")
         }
         else{
             const { id } = this.props.match.params
@@ -107,18 +112,13 @@ class Comentarios extends React.Component{
                             </article>
                         )
                     })}        
-                    {!localStorage.fotoPerfil ?
-                        <form onSubmit={this.comentarErro}>
-                            <input type="text" placeholder="Adicionar comentário..."/>
-                            <button type="submit">Comentar</button>
-                        </form>
-                        :
+                    
                         <form onSubmit={this.comentar}>
                             <input type="text" placeholder="Adicionar comentário..."
                                 value={this.state.comentar} onChange={(e) => this.setState({comentar: e.target.value})}/>
                             <button type="submit">Comentar</button>
                         </form>
-                }
+                    
 
                     
                 </article>
