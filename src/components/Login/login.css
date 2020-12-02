@@ -17,9 +17,20 @@ section#login .containerLogin h1 {
     font-size: 30px;
 }
 
-section#login .containerLogin h2 {
-    margin-top: 10px;
-    color: #FF0000;
+section#login .containerErro{
+    background: #FA5858;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+section#login .containerErro h2{
+    color: #ffff;
+    font-size: 19px;
+    font-weight: 400;
 }
 
 section#login .containerLogin form{

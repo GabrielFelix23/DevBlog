@@ -27,8 +27,10 @@ class Login extends React.Component{
       })
       .catch((error) => {
         this.setState({
-          erro: "Login incorreto!"
-        })    
+          erro: <div className="containerErro">
+                  <h2>Login incorreto!</h2>
+                </div>
+        })  
       })
   }
 
@@ -42,8 +44,10 @@ class Login extends React.Component{
     return (
      <section id="login">
        <div className="containerLogin">
+          
+          {this.state.erro}
           <h1>Login</h1>
-          <h2>{this.state.erro}</h2>
+          
           <form onSubmit={this.login}>
 
             <label>Email: </label>
