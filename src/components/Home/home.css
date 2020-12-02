@@ -66,6 +66,7 @@ section#posts .containerButtonVoltar a{
 
 section#posts article img{
     width: 100%;
+    height: auto;
     margin: 10px auto;
     padding: 0 auto;
     border-radius: 5px
