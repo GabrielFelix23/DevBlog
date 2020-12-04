@@ -23,17 +23,16 @@ class Cadastro extends React.Component{
 
     await firebase.cadastrar(nome, email, senha)
     .then(() => {
-      this.props.history.replace('/fotoPerfil')
+        this.props.history.replace('/fotoPerfil')  
     })
     .catch((error) => {
       if(email){
         this.setState({
           erro: <div className="containerErro">
-                    <h2>E-mail já cadastrado no nosso banco de dados!</h2>
+                    <h2>E-mail já cadastrado em nosso banco de dados!</h2>
                 </div>
         })
-      }
-      
+      }  
       if(senha.length < 4){
         this.setState({
           erro: <div className="containerErro">
@@ -41,8 +40,7 @@ class Cadastro extends React.Component{
                 </div>
         })
       }
-
-      if(confirmarSenha != senha){
+      if(confirmarSenha !== senha){
         this.setState({
           erro: <div className="containerErro">
                     <h2>As senhas não estão iguais!</h2>
