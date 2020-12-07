@@ -40,7 +40,7 @@ class Cadastro extends React.Component{
                 </div>
         })
       }
-      if(confirmarSenha !== senha){
+      if(confirmarSenha == senha){
         this.setState({
           erro: <div className="containerErro">
                     <h2>As senhas não estão iguais!</h2>
